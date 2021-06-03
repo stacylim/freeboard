@@ -2239,6 +2239,11 @@
     "nanoid" "^3.1.22"
     "source-map" "^0.6.1"
 
+"prettier@2.3.0":
+  "integrity" "sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w=="
+  "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.3.0.tgz"
+  "version" "2.3.0"
+
 "process-nextick-args@~2.0.0":
   "integrity" "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
   "resolved" "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"

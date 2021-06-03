@@ -1,3 +1,11 @@
 import { gql } from "@apollo/client";
 
-c
+export const EDIT_BOARD = gql`
+  mutation updateBoard($updateBoardInput: UpdateBoardInput!) {
+    updateBoard(updateBoardInput: $updateBoardInput) {
+      title
+      contents
+      youtubeURl
+    }
+  }
+`;

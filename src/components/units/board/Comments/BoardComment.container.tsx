@@ -19,13 +19,23 @@ const inputsInit = {
 
 export default function BoardComment() {
   const [inputs, setInputs] = useState(inputsInit);
+
+  // const [rating, setRating] = useState(0);
+  //숫자값을 받을때는 State 안에 0을 넣으면 된다.
+
   const router = useRouter();
   const { data } = useQuery(FETCH_BOARD_COMMENT, {
     variables: { boardId: String(router.query.id) },
   });
 
-  console.log(data, "ㅁㄴㅇ");
   const [createBoardComment] = useMutation(CREATE_BOARD_COMMENT);
+
+  const onChangeInput = (event) => {
+    inputs[event.target.name] = event.target.value;
+    setInputs(inputs);
+     //객체에 접근하기 위해서 대괄호가 필요하다.
+    console.log(inputs, event.target.name);
+  };
 
   //댓글등록
   const onClickRegister = async () => {
@@ -56,5 +66,27 @@ export default function BoardComment() {
     }
   };
 
-  return <BoardCommentUI data={data} onClickRegister={onClickRegister} />;
+  const starArr = new Array(5).fill(1);
+  // starArr = [1, 1, 1, 1, 1];
+
+  const saveRating = (score) => {
+    const obj = { ...inputs };
+    obj.rating = score;
+
+    console.log(obj);
+    setInputs(obj);
+
+    // setRating(score);
+  };
+
+  return (
+    <BoardCommentUI
+      data={data}
+      onClickRegister={onClickRegister}
+      starArr={starArr}
+      saveRating={saveRating}
+      inputs={inputs}
+      onChangeInput={onChangeInput}
+    />
+  );
 }

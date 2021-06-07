@@ -1,6 +1,9 @@
 import { getDefaultValues } from "@apollo/client/utilities";
 import { Checkbox } from "@material-ui/core";
+import { render } from "react-dom";
+import Carousel from "react-img-carousel";
 import React from "react";
+
 import {
   ListWrapper,
   LogoHeaderWrapper,
@@ -8,7 +11,6 @@ import {
   LoginJoinWrapper,
   Login,
   JoinMember,
-  CaruselWrapper,
   HeadWrapper,
   NavigationWrapper,
   Freeboard,
@@ -30,18 +32,18 @@ import {
   ListbottomWrapper,
   BoardRegister,
   BoardPen,
-  Logo1,
+  Num1,
   LogoWrapper,
-  Logo10,
+  Num10,
   Logo11,
-  Logo2,
-  Logo3,
-  Logo4,
-  Logo5,
-  Logo6,
-  Logo7,
-  Logo8,
-  Logo9,
+  Num2,
+  Num3,
+  Num4,
+  Num5,
+  Num6,
+  Num7,
+  Num8,
+  Num9,
   MyPage,
   UsedMarket,
   Upperbox,
@@ -71,31 +73,33 @@ import {
   SearchInput,
   SearchInputWrapper,
   SearchInputImgWrapper,
+  Carouselmg,
+  BottomWrapper,
+  PageNationWrapper,
+  CarouselWrapper,
 } from "./Board.List.styles";
+require("react-img-carousel/lib/carousel.css");
 
-export default function BoardListUI({ data }) {
+var settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
+export default function BoardListUI({
+  data,
+  boardCount,
+  saveSearch,
+  onClickSearchBox,
+  onClickPage1,
+}) {
   return (
     <ListWrapper>
-      <LogoHeaderWrapper>
+      {/* <LogoHeaderWrapper>
         <LogoWholeWrapper src="/codecamplogo.png"></LogoWholeWrapper>
-        {/* <MarkWrapper>
-            <Logo1 src="/logo1.png"></Logo1>
-            <Logo2 src="/logo2.png"></Logo2>
-          </MarkWrapper>
-          <CampLogoWrapper>
-            <LogoWrapper>
-              <Logo3 src="/letterC.png"></Logo3>
-              <Logo4 src="/letterO.png"></Logo4>
-              <Logo5 src="/letterD.png"></Logo5>
-              <Logo6 src="/letterE.png"></Logo6>
-              <Logo7 src="/letter..png"></Logo7>
-              <Logo8 src="/lettersecondC.png"></Logo8>
-              <Logo9 src="/letterA.png"></Logo9>
-              <Logo10 src="/letterM.png"></Logo10>
-            </LogoWrapper>
-            <Logo11 src="/letterP.png"></Logo11>
-          </CampLogoWrapper> */}
-
+   
         <LoginJoinWrapper>
           <Login>로그인</Login>
           <JoinMember>회원가입</JoinMember>
@@ -103,9 +107,20 @@ export default function BoardListUI({ data }) {
       </LogoHeaderWrapper>
 
       <ListImageWrapper>
-        <CaruselWrapper>
-          <HeadWrapper></HeadWrapper>
-        </CaruselWrapper>
+        <HeadWrapper>
+          <CarouselWrapper>
+            <Carousel
+              // cellPadding={5}
+              viewportWidth="100%"
+              cellPadding={5}
+              dots={true}
+            >
+              <Carouselmg src="/carouselbox1.png" />
+              <Carouselmg src="/carouselbox2.png" />
+              <Carouselmg src="/carouselbox3.png" />
+            </Carousel>
+          </CarouselWrapper>
+        </HeadWrapper>
       </ListImageWrapper>
 
       <NavigationWrapper>
@@ -114,7 +129,7 @@ export default function BoardListUI({ data }) {
           <UsedMarket>중고마켓</UsedMarket>
           <MyPage>마이페이지</MyPage>
         </NavigationButtonWrapper>
-      </NavigationWrapper>
+      </NavigationWrapper> */}
 
       <MainContentDiv>
         <TitleWrapper>
@@ -231,12 +246,14 @@ export default function BoardListUI({ data }) {
                   name="searchinput"
                   type="text"
                   placeholder="제목을 검색해주세요."
+                  onChange={saveSearch}
                 />
+                {/* 인풋에있는 글자가 변경됐을때 세이브서치라는 함수를 실행 */}
               </SearchInputWrapper>
             </SearchInputImgWrapper>
           </SearchWrapper>
           <Calendar>캘린더</Calendar>
-          <SearchBox>검색하기</SearchBox>
+          <SearchBox onClick={onClickSearchBox}>검색하기</SearchBox>
         </MiddleSearchWrapper>
 
         <MainBoderListDiv>
@@ -259,6 +276,16 @@ export default function BoardListUI({ data }) {
             })}
           </MainBoardListDivs>
         </MainBoderListDiv>
+
+        {/* <ListbottomWrapper>
+          {/* <ReactPaginateB
+            pageCount={10}
+            initialPage={1}
+            pageRangeDisplayed={boardCount}
+            marginPagesDisplayed={10}
+            //지정한 페이지수 가운데에서 양쪽으로 몇페이지가 나오는지 정하면 됨
+          ></ReactPaginate> */}
+        {/* </ListbottomWrapper> */}
       </MainContentDiv>
 
       {/* <Checkbox type="checkbox" onClick={handleCheckAll} checked={checkedAll} />
@@ -267,13 +294,28 @@ export default function BoardListUI({ data }) {
 
       {/* // </InfiniteScroll> */}
 
-      <ListbottomWrapper>
-        {/* <PageNumberWrapper> 1 2 </PageNumberWrapper> */}
+      <BottomWrapper>
+        <PageNationWrapper>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data) => (
+            <Num1 id={data} onClick={onClickPage1}>
+              {data}
+            </Num1>
+          ))}
+          {/* <Num2 onClick={onClickPage2}>2</Num2>
+          <Num3 onClick={onClickPage3}>3</Num3>
+          <Num4 onClick={onClickPage4}>4</Num4>
+          <Num5 onClick={onClickPage5}>5</Num5>
+          <Num6 onClick={onClickPage6}>6</Num6>
+          <Num7 onClick={onClickPage7}>7</Num7>
+          <Num8 onClick={onClickPage8}>8</Num8>
+          <Num9 onClick={onClickPage9}>9</Num9>
+          <Num10 onClick={onClickPage10}>10</Num10> */}
+        </PageNationWrapper>
         <PageNumberWrapper>
           <BoardPen src="/pen.png"></BoardPen>
           <BoardRegister>게시물등록하기</BoardRegister>
         </PageNumberWrapper>
-      </ListbottomWrapper>
+      </BottomWrapper>
     </ListWrapper>
   );
 }

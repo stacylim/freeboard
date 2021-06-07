@@ -1,6 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import BoardCommentUI from "./BoardComment.presenter";
 import { useMutation } from "@apollo/client";
+import Modal from "react-modal";
+
 import {
   DELETE_BOARD_COMMENT,
   FETCH_BOARD_COMMENT,
@@ -34,8 +36,12 @@ import {
   EditCountingWrapper,
   EditReplyRegister,
   EditReplyCounting,
+  ReplyStar,
+  ModalInput,
+  ModalButton,
 } from "./BoardComment.styles";
 import { useRouter } from "next/router";
+import { common } from "@material-ui/core/colors";
 
 const inputupdateInit = {
   writer: "",
@@ -43,7 +49,21 @@ const inputupdateInit = {
   contents: "",
   rating: 0,
 };
-const BoardCommentUIItem = ({ data }) => {
+
+const modalcustomStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+Modal.setAppElement("body");
+
+const BoardCommentUIItem = ({ data, starArr }) => {
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
   const [updateInit, setUpdateInit] = useState(inputupdateInit);
@@ -54,6 +74,40 @@ const BoardCommentUIItem = ({ data }) => {
   //댓글수정연필버튼 눌렀을때 상태변경
   const onClickEdit = () => {
     setIsEdit(true);
+  };
+  const [password, SetPassword] = useState("");
+
+  //삭제버튼 눌렀을때 알람창=모달창
+  const [modal, setModal] = useState(false);
+
+  const onChange = (event) => {
+    SetPassword(event.target.value);
+    //Input값이 변경이되면 자동으로 State값을 저장해주는 것
+  };
+
+  const onClickCommentDelete = async () => {
+    console.log(password, data._id);
+    try {
+      await deleteBoardComment({
+        //Arguments에서 꼭 보내야하는 애들
+        variables: {
+          password: password,
+          boardCommentId: data._id,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_BOARD_COMMENT,
+            variables: { boardId: String(router.query.id) },
+          },
+        ],
+      });
+      alert("댓글이 삭제되었습니다.");
+      setModal(false);
+      // console.log(result);
+    } catch (error) {
+      alert(error.message);
+      //댓글이 삭제된 시점에서 모달창이 꺼져야 하므로 모달 =false로 다시 만들어줘야한다.
+    }
   };
 
   //수정후 수정하기버튼 눌렀을때
@@ -81,25 +135,28 @@ const BoardCommentUIItem = ({ data }) => {
   };
 
   const onClickDelete = async (event) => {
-    try {
-      console.log(event.target.id);
-      const result = await deleteBoardComment({
-        //Arguments에서 꼭 보내야하는 애들
-        variables: {
-          password: "",
-          boardCommentId: event.target.id,
-        },
+    setModal(true);
+    return;
 
-        refetchQueries: [
-          {
-            query: FETCH_BOARD_COMMENT,
-            variables: { boardId: String(router.query.id) },
-          },
-        ],
-      });
-    } catch (error) {
-      alert(error.message);
-    }
+    // try {
+    //   console.log(event.target.id);
+    //   const result = await deleteBoardComment({
+    //     //Arguments에서 꼭 보내야하는 애들
+    //     variables: {
+    //       password: "",
+    //       boardCommentId: event.target.id,
+    //     },
+
+    //     refetchQueries: [
+    //       {
+    //         query: FETCH_BOARD_COMMENT,
+    //         variables: { boardId: String(router.query.id) },
+    //       },
+    //     ],
+    //   });
+    // } catch (error) {
+    //   alert(error.message);
+    // }
   };
 
   const onChangeInput = (event) => {
@@ -109,6 +166,9 @@ const BoardCommentUIItem = ({ data }) => {
       [event.target.name]: event.target.value,
     });
   };
+
+  //제목 입력 후 검색하기눌럿을때
+  const onClickSearch = (event) => {};
 
   //수정버튼 눌렀을때 state로 수정페이지가 보이게 하듯이, onChange도 스테이트를 활용하여 저장되게 한다.
   return (
@@ -123,7 +183,6 @@ const BoardCommentUIItem = ({ data }) => {
               onChange={onChangeInput}
               defaultValue={data?.writer}
             />
-
             <EditReplyPassword
               name="password"
               type="password"
@@ -131,13 +190,19 @@ const BoardCommentUIItem = ({ data }) => {
               onChange={onChangeInput}
               defaultValue={data?.password}
             />
-
             <EditReplyStarsWrapper>
-              <YellowStar src="/YellowStar.png"></YellowStar>
-              <YellowStar src="/YellowStar.png"></YellowStar>
-              <YellowStar src="/YellowStar.png"></YellowStar>
-              <Star src="/Star.png"></Star>
-              <Star src="/Star.png"></Star>
+              {starArr.map((_, key) => {
+                return (
+                  <div key={key}>
+                    123
+                    {/* <ReplyStar
+                      src={
+                        inputs.rating > key ? "/YellowStar.png" : "/Star.png"
+                      }
+                    /> */}
+                  </div>
+                );
+              })}
             </EditReplyStarsWrapper>
           </EditReplyWriterPasswordWrapper>
           <EditReplyContentWrapper>
@@ -162,6 +227,15 @@ const BoardCommentUIItem = ({ data }) => {
       {/*//조건부렌더링*/}
       {!isEdit && (
         <ReplyBox1>
+          <Modal isOpen={modal} style={modalcustomStyles}>
+            <ModalInput
+              onChange={onChange}
+              type="password"
+              placeholder="비밀번호"
+            ></ModalInput>
+            <ModalButton onClick={onClickCommentDelete}>댓글삭제</ModalButton>;
+          </Modal>
+
           <ProfileWrapper>
             <Profile src="/Profilephoto.png"></Profile>
             <Box1InnerWrapper>
@@ -170,11 +244,19 @@ const BoardCommentUIItem = ({ data }) => {
                   <WriterWrapper>
                     <Writer>{data.writer}</Writer>
                     <StarsWrapper2>
-                      <YellowStar src="/YellowStar.png"></YellowStar>
-                      <YellowStar src="/YellowStar.png"></YellowStar>
-                      <YellowStar src="/YellowStar.png"></YellowStar>
-                      <Star src="/Star.png"></Star>
-                      <Star src="/Star.png"></Star>
+                      {starArr.map((_, key) => {
+                        return (
+                          <div key={key}>
+                            <ReplyStar
+                              src={
+                                data.rating > key
+                                  ? "/YellowStar.png"
+                                  : "/Star.png"
+                              }
+                            />
+                          </div>
+                        );
+                      })}
                     </StarsWrapper2>
                   </WriterWrapper>
                 </WriterStarWrapper>

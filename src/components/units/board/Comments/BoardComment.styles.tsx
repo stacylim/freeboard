@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const ReplyWholeWrapper = styled.div`
-  width: 1200px;
+  /* width: 1200px; */
   border: none;
   display: flex;
   flex-direction: row;
@@ -10,13 +10,19 @@ export const ReplyWholeWrapper = styled.div`
 `;
 export const ReplyUpperWrapper = styled.div`
   width: 1200px;
-  border-top: 1px, solid rgba(0, 0, 0, 0.2);
+  border-top: 1px, solid #bdbdbd;
 `;
+
+export const ModalInput = styled.input``;
+
+export const ModalButton = styled.button``;
 
 export const ReplyImageWrapper = styled.div`
   width: 130px;
   display: flex;
   flex-direction: row;
+  margin-top: 70px;
+  margin-bottom: 70px;
 `;
 export const Reply = styled.div`
   font-weight: bold;
@@ -28,23 +34,26 @@ export const ReplyImage = styled.img`
 `;
 export const ReplyWriterPasswordWrapper = styled.div`
   height: 52px;
-  order: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: left;
   padding-top: 20px;
+  margin-bottom: 20px;
 `;
 export const ReplyWriter = styled.input`
   width: 180px;
   height: 52px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   background-color: white;
+  margin-right: 20px;
 `;
 export const ReplyPassword = styled.input`
   width: 180px;
   height: 52px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   background-color: white;
+  margin-right: 20px;
 `;
 export const ReplyStarsWrapper = styled.div`
   width: 180px;
@@ -53,39 +62,25 @@ export const ReplyStarsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 10px;
 `;
-export const ReplyStar1 = styled.img`
+export const ReplyStar = styled.img`
   width: 20px;
   height: 20px;
 `;
-export const ReplyStar2 = styled.img`
-  width: 20px;
-  height: 20px;
-`;
-export const ReplyStar3 = styled.img`
-  width: 20px;
-  height: 20px;
-`;
-export const ReplyStar4 = styled.img`
-  width: 20px;
-  height: 20px;
-`;
-export const ReplyStar5 = styled.img`
-  width: 20px;
-  height: 20px;
-`;
+
 export const ReplyContentWrapper = styled.div`
   width: 1200px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid#BDBDBD;
   color: gray;
-  padding-top: 20px;
+  margin-top: 20px;
 `;
 
 export const ReplyContent = styled.input`
   width: 1200px;
   height: 161px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
-  color: gray;
+  border: 1px, solid #BDBDBD;
+  color: #BDBDBD
   display: flex;
   justify-content: top;
 `;
@@ -110,7 +105,7 @@ export const CountingWrapper = styled.div`
 
 export const CountingRegisterWrapper = styled.div`
   width: 1200px;
-  border: 1px, solid black;
+  border: 1px, solid #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -118,8 +113,7 @@ export const CountingRegisterWrapper = styled.div`
 export const ReplyCounting = styled.div`
   width: 1109px;
   height: 52px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
-  padding-top: 10px;
+  border: 1px, solid #bdbdbd;
 `;
 export const ReplyRegister = styled.button`
   width: 91px;
@@ -134,7 +128,7 @@ export const ReplyRegister = styled.button`
 export const ReplyBox1 = styled.div`
   width: 1200px;
   height: 131px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #bdbdbd;
   padding-top: 20px;
 `;
 export const ProfileWrapper = styled.div`
@@ -169,10 +163,12 @@ export const WriterWrapper = styled.div`
   font-weight: bold;
 `;
 export const Writer = styled.div`
+  width: 50px;
   display: flex;
   font-weight: bold;
   justify-content: left;
   font-weight: bold;
+  color: black;
 `;
 export const StarsWrapper2 = styled.div`
   border: none;
@@ -197,8 +193,8 @@ export const Box1Content = styled.div`
   padding-left: 15px;
 `;
 export const Date = styled.div`
-  width: 60px;
-  color: gray;
+  width: 100px;
+  color: #bdbdbd;
   padding-top: 20px;
   font-size: 10px;
   padding-left: 15px;
@@ -221,7 +217,7 @@ export const DeleteIMG = styled.img`
 
 export const EditReplyWriterPasswordWrapper = styled.div`
   height: 52px;
-  order: 1px, solid rgba(0, 0, 0, 0.2);
+  order: 1px, solid #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -231,13 +227,13 @@ export const EditReplyWriterPasswordWrapper = styled.div`
 export const EditReplyWriter = styled.input`
   width: 180px;
   height: 52px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   background-color: white;
 `;
 export const EditReplyPassword = styled.input`
   width: 180px;
   height: 52px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   background-color: white;
 `;
 export const EditReplyStarsWrapper = styled.div`
@@ -250,14 +246,14 @@ export const EditReplyStarsWrapper = styled.div`
 `;
 export const EditReplyContentWrapper = styled.div`
   width: 1200px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   color: gray;
   padding-top: 20px;
 `;
 export const EditReplycontent = styled.input`
   width: 1200px;
   height: 161px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   color: gray;
   display: flex;
   justify-content: top;
@@ -271,7 +267,7 @@ export const EditCountingRegisterWrapper = styled.div`
 `;
 export const EditcountingRegisterWrapper = styled.div`
   width: 1200px;
-  border: 1px, solid black;
+  border: 1px, solid #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -291,14 +287,14 @@ export const EditReplyRegister = styled.div`
 export const EditReplyCounting = styled.div`
   width: 1109px;
   height: 52px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid#BDBDBD;
   padding-top: 10px;
 `;
 
 export const EditCountingWrapper = styled.div`
   width: 1200px;
   height: 52px;
-  border: 1px solid black;
+  border: 1px, solid#BDBDBD;
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -308,7 +304,7 @@ export const EditCountingWrapper = styled.div`
 export const EditReplyContent = styled.input`
   width: 1200px;
   height: 161px;
-  border: 1px, solid rgba(0, 0, 0, 0.2);
+  border: 1px, solid #bdbdbd;
   color: gray;
   display: flex;
   justify-content: top;

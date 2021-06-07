@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { FormHelperText } from "@material-ui/core";
 
 export const ListWrapper = styled.div`
   width: 100%;
@@ -8,10 +9,9 @@ export const ListWrapper = styled.div`
 
 export const LogoHeaderWrapper = styled.div`
   width: 100%;
-  height: 120px;
+  height: 110px;
   /* display: flex; */
   flex-direction: row;
-  position: fixed;
   align-content: space-between;
   display: grid;
   grid-template-columns: 70% auto;
@@ -39,46 +39,75 @@ export const LogoWrapper = styled.div`
   align-content: center;
 `;
 
-export const Logo1 = styled.img`
-  width: 15.73px;
-  height: 36px;
+export const Num1 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo2 = styled.img`
-  width: 15.73px;
-  height: 36px;
-  margin-left: 8px;
+export const Num2 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo3 = styled.img`
-  width: 17.28px;
-  height: 20.69px;
+export const Num3 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo4 = styled.img`
-  width: 18.71px;
-  height: 20.69px;
+export const Num4 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo5 = styled.img`
-  width: 17.98px;
-  height: 28.7px;
+export const Num5 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo6 = styled.img`
-  width: 18.15px;
-  height: 20.69px;
+export const Num6 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo7 = styled.img`
-  width: 6.23px;
-  height: 6.41px;
+export const Num7 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo8 = styled.img`
-  width: 17.28px;
-  height: 20.69px;
+export const Num8 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo9 = styled.img`
-  width: 17.85px;
-  height: 20.63px;
+export const Num9 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
-export const Logo10 = styled.img`
-  width: 28.12px;
-  height: 20.33px;
+export const Num10 = styled.button`
+  width: 10px;
+  height: 19px;
+  border: none;
+  background-color: white;
+  margin-right: 5px;
 `;
 export const Logo11 = styled.img`
   padding-top: 8px;
@@ -108,16 +137,16 @@ export const JoinMember = styled.button`
   background-color: #ffd600;
   border: none;
 `;
-export const CaruselWrapper = styled.div``;
 
 export const HeadWrapper = styled.div`
-  display: flex;
+  /* display: flex; */
   align-items: center;
 `;
 
 export const NavigationWrapper = styled.div`
   width: 100%;
   height: 64px;
+  margin-top: 145px;
   /* display: flex; */
   flex-direction: center;
   align-content: center;
@@ -125,34 +154,34 @@ export const NavigationWrapper = styled.div`
   text-align: center;
 `;
 
-export const NavigationButtonWrapper = styled.div`
-  /* display: flex; */
-  height: 64px;
-  line-height: 64px;
-  flex-direction: center;
-  align-content: space-between;
+// export const NavigationButtonWrapper = styled.div`
+//   /* display: flex; */
+//   height: 64px;
+//   line-height: 64px;
+//   flex-direction: center;
+//   align-content: space-between;
 
-  button {
-    width: 90px;
-    border-right: solid 1px white;
-  }
-`;
+//   button {
+//     width: 90px;
+//     border-right: solid 1px white;
+//   }
+// `;
 
-export const Freeboard = styled.button`
-  border: none;
-  background-color: #ffd600;
-`;
+// export const Freeboard = styled.button`
+//   border: none;
+//   background-color: #ffd600;
+// `;
 
-export const UsedMarket = styled.button`
-  border: none;
-  background-color: #ffd600;
-`;
+// export const UsedMarket = styled.button`
+//   border: none;
+//   background-color: #ffd600;
+// `;
 
-export const MyPage = styled.button`
-  border: none;
-  background-color: #ffd600;
-  border-right: none !important;
-`;
+// export const MyPage = styled.button`
+//   border: none;
+//   background-color: #ffd600;
+//   border-right: none !important;
+// `;
 
 export const UpperWrapper = styled.div`
   /* display: flex; */
@@ -217,9 +246,8 @@ export const BoxTitle = styled.div`
 `;
 
 export const BoxhalfbottomWrapper = styled.div`
-  /* display: flex; */
-  flex-direction: row;
-  align-content: space-between;
+  /* display: grid;
+  grid-template-columns: 10% 50% 25% 15%; */
 `;
 export const BoxProfileWholeWrapper = styled.div`
   /* display: flex; */
@@ -263,8 +291,10 @@ export const LikeNumberWrapper = styled.div`
   line-height: 25px;
 `;
 export const MiddleSearchWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  align-content: space-between;
+  grid-template-columns: 30% 10% auto;
+  padding-top: 30px;
 
   min-height: 50px;
   line-height: 50px;
@@ -299,22 +329,34 @@ export const SearchBox = styled.button`
   font-size: 18px;
 `;
 export const BoardWrapper = styled.div``;
+
 export const ListbottomWrapper = styled.div`
   margin-top: 100px;
   height: 50px;
   width: 1920px;
 `;
 export const PageNumberWrapper = styled.div`
-  width: 200px;
   height: 52px;
   display: flex;
   flex-direction: row;
+  border-color: #f2f2f2;
 `;
 
 export const BoardRegister = styled.div`
   background-color: white;
-  margin-left: 15px;
+  margin-left: 10px;
 `;
+export const PageNationWrapper = styled.div``;
+
+export const BottomWrapper = styled.div`
+  margin-top: 60px;
+  min-height: 300px;
+  align-content: row;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 75% auto;
+`;
+
 export const BoardPen = styled.img`
   width: 18px;
   height: 18px;
@@ -381,4 +423,31 @@ export const SearchInput = styled.input`
   background-color: #f2f2f2;
   border: none;
   font-size: 16px;
+`;
+
+export const CarouselWrapper = styled.div`
+  height: 400px;
+  width: 100%;
+  //라이브러리에서 클래스를 확인하고 .을 찍어주고 상위랩퍼에서 스타일 변경을 해주면된다.
+  .carousel-viewport {
+    height: 350px !important;
+  }
+  .carousel-left-arrow {
+    left: 25%;
+    top: 50%;
+  }
+  .carousel-right-arrow {
+    right: 25%;
+    top: 50%;
+  }
+  .carousel-dots {
+    bottom: 10px;
+  }
+  /* height: 400px; */
+`;
+
+export const Carouselmg = styled.img`
+  height: 100%;
+  width: 100%;
+  margin-top: 0px !important;
 `;

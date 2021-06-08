@@ -34,6 +34,7 @@ export default function BoardDetailUi({
   onClickEdit,
   isActive,
   onClickLike,
+  onClickDislike,
 }) {
   // console.log(data?.fetchBoard.writer, "프레젠터")
   return (
@@ -64,11 +65,11 @@ export default function BoardDetailUi({
             <LikeUnLikeWrapper>
               <LikeWrapper>
                 <Like onClick={onClickLike} src="/Like.png"></Like>
-                <LikeNumber>1920</LikeNumber>
+                <LikeNumber>{data?.fetchBoard?.likeCount}</LikeNumber>
               </LikeWrapper>
               <UnLikeWrapper>
-                <UnLike src="/Unlike.png"></UnLike>
-                <UnLikeNumber>1920</UnLikeNumber>
+                <UnLike onClick={onClickDislike} src="/Unlike.png"></UnLike>
+                <UnLikeNumber>{data?.fetchBoard?.dislikeCount}</UnLikeNumber>
               </UnLikeWrapper>
             </LikeUnLikeWrapper>
           </LikeUnlikeBtnWrapper>

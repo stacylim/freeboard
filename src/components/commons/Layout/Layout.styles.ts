@@ -1,5 +1,26 @@
 import styled from "@emotion/styled";
 
+export const Wrapper = styled.div`
+  width: 100%;
+  height: 100px;
+`;
+
+export const Header = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: white;
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  height: 200px;
+  background-color: lightgray;
+`;
+
+export const Body = styled.div`
+  height: 500px;
+`;
+
 export const LogoHeaderWrapper = styled.div`
   width: 100%;
   height: 110px;
@@ -57,6 +78,8 @@ export const CarouselWrapper = styled.div`
   }
   /* height: 400px; */
 `;
+
+export const Carousel = styled.div``;
 
 export const Carouselmg = styled.img`
   height: 100%;

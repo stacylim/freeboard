@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import React from "react";
-import Header from "../src/commons/units/header/Headers.container";
+import Layout from "../src/components/commons/Layout/Layout.container";
 
 function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({
@@ -11,8 +11,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={client}>
-      <Header />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ApolloProvider>
   );
 }

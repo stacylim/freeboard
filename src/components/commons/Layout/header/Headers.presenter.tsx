@@ -4,8 +4,9 @@ import Carousel from "react-img-carousel";
 import {
   ListImageWrapper,
   LogoWholeWrapper,
-} from "../../../components/units/board/list/Board.List.styles";
+} from "../../../units/board/list/Board.List.styles";
 import {
+  Carousel,
   Carouselmg,
   CarouselWrapper,
   Freeboard,

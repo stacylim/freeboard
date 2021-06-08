@@ -199,7 +199,9 @@ export const TitleWrapper = styled.div`
 `;
 
 export const MainContentDiv = styled.div`
-  padding: 0px 8%;
+  margin-top: 500px;
+
+  /* padding: 0px 8%; */
   //앞에수치는 위아래, 뒤에는 좌우 여백 값.
   // = padding : 0px 0px 10% 10%
 `;

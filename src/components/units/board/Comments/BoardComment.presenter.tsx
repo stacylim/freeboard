@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InfiniteScroll from "react-infinite-scroller";
 import BoardCommentUIItem from "./BoardComment.presenterItem";
 import {
   ReplyWholeWrapper,
@@ -27,6 +28,7 @@ export default function BoardCommentUi({
   saveRating,
   inputs,
   onChangeInput,
+  loadMore,
 }) {
   return (
     <>
@@ -91,9 +93,15 @@ export default function BoardCommentUi({
         </CountingWrapper>
         <ReplyRegister onClick={onClickRegister}>등록하기</ReplyRegister>
       </CountingRegisterWrapper>
-      {data?.fetchBoardComments?.map((data) => (
-        <BoardCommentUIItem data={data} starArr={starArr}></BoardCommentUIItem>
-      ))}
+
+      <InfiniteScroll loadMore={loadMore} hasMore={true}>
+        {data?.fetchBoardComments?.map((data) => (
+          <BoardCommentUIItem
+            data={data}
+            starArr={starArr}
+          ></BoardCommentUIItem>
+        ))}
+      </InfiniteScroll>
     </>
   );
 }

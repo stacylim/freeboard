@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import BoardListUI from "./Board.List.presenter";
 import { FETCH_BOARDS, FETCH_BOARDS_COUNT } from "./Board.List.queries";
 import { useState, useEffect } from "react";
+
 const BoardList = () => {
   const client = useApolloClient();
   const [search, setSearch] = useState("");
@@ -14,9 +15,10 @@ const BoardList = () => {
   //아래 함수에서 currentPage값이 변경됨에 따라 FetchBoards가 다시실행되어 각각에 해당되는 페이지값을 다시 받아오게 된다.
   // Queries의 Fetch_Boards가 계속 재 실행.
 
-  const { data, loading, refetch } = useQuery(FETCH_BOARDS, {
+  const { data, loading, refetch, fetchMore } = useQuery(FETCH_BOARDS, {
     variables: { page: currentPage, search: search },
   });
+
   console.log(data);
 
   const { data: boardCount, loading: boardsLoding } = useQuery(
@@ -44,6 +46,18 @@ const BoardList = () => {
     // console.log(event.target.id);
   };
 
+  // const onLoadMore = () => {
+  //   fetchMore({
+  //     variables: { page: Math.floor(data?.fetchBoards.length / 10) + 1 },
+  //     updateQuery: (prev, { fetchMoreResult }) => ({
+  //       //fetchMore로 데이터를 받아온 후 작업을 해주세요. <div className=""></div>
+  //       //fetchMore로 데이터를 받아온 후 작업을 해주세요. <div className=""></div>
+  //       fetchBoards: [...prev.fetchBoards, ...fetchMoreResult.fetchBoards],
+  //       //배열을 연결하기위해 스프레드 ....
+  //     }),
+  //   });
+  // };
+
   if (loading === false && boardsLoding === false) {
     //let은 변수로 할당해주기 위해 사용
     let totalPage = Math.floor(boardCount.fetchBoardsCount / 10);
@@ -61,9 +75,7 @@ const BoardList = () => {
         onClickSearchBox={onClickSearchBox}
         onClickPage1={onClickPage1}
 
-        //   // currentPage={currentPage}
         //   onClickPage={onClickPage}
-        //   onLoadMore={onLoadMore}
       />
     );
   } else {

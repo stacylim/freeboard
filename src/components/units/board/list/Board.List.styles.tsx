@@ -293,15 +293,17 @@ export const LikeNumberWrapper = styled.div`
   line-height: 25px;
 `;
 export const MiddleSearchWrapper = styled.div`
+  align-content: row;
   display: grid;
-  align-content: space-between;
-  grid-template-columns: 30% 10% auto;
+  grid-template-columns: 50% 30% auto;
+
   padding-top: 30px;
+  margin-left: 20px;
 
   min-height: 50px;
   line-height: 50px;
   padding-top: 40px;
-  width: 1920px;
+  width: 100%;
 `;
 
 export const SearchInputImgWrapper = styled.div`
@@ -453,3 +455,5 @@ export const Carouselmg = styled.img`
   width: 100%;
   margin-top: 0px !important;
 `;
+
+export const BoardList = styled.div``;

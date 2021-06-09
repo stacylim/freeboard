@@ -227,7 +227,15 @@ const BoardCommentUIItem = ({ data, starArr }) => {
       {/*//조건부렌더링*/}
       {!isEdit && (
         <ReplyBox1>
-          <Modal isOpen={modal} style={modalcustomStyles}>
+          <Modal
+            isOpen={modal}
+            onRequestClose={() => setModal(false)}
+            //React모달 공식문서에 있으며, setModal(false)일때만 모달창이 닫힐 수 있도록 해준다.
+            //대부분 모달의 기본기능이며, 창 외 영역을 클릭해주면 화면이 닫힘.
+            //setModal()=> 보통 화살표 함수없이 함수를 실행하게 되면, 자동으로 실행이 되므로, 그것을 방지하기 위해
+            //무한 반복을 막기위해서 클릭했을때 화살표 함수가 필요하다.
+            style={modalcustomStyles}
+          >
             <ModalInput
               onChange={onChange}
               type="password"

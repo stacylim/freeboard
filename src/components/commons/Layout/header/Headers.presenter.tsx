@@ -6,7 +6,6 @@ import {
   LogoWholeWrapper,
 } from "../../../units/board/list/Board.List.styles";
 import {
-  Carousel,
   Carouselmg,
   CarouselWrapper,
   Freeboard,
@@ -15,10 +14,6 @@ import {
   Login,
   LoginJoinWrapper,
   LogoHeaderWrapper,
-  MyPage,
-  NavigationButtonWrapper,
-  NavigationWrapper,
-  UsedMarket,
 } from "./Headers.styles";
 
 // import {} from "./Header.styles";
@@ -59,14 +54,6 @@ export default function HeaderUI(
           </CarouselWrapper>
         </HeadWrapper>
       </ListImageWrapper>
-
-      <NavigationWrapper>
-        <NavigationButtonWrapper>
-          <Freeboard>자유게시판</Freeboard>
-          <UsedMarket>중고마켓</UsedMarket>
-          <MyPage>마이페이지</MyPage>
-        </NavigationButtonWrapper>
-      </NavigationWrapper>
     </div>
   );
 }

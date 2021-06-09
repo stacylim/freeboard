@@ -1,9 +1,7 @@
 import HeaderUI from "./Headers.presenter";
 
-const Header = ({ children }) => {
-  return <HeaderUI children={children} />;
+const Header = () => {
+  return <HeaderUI />;
 };
 
 export default Header;
-
-

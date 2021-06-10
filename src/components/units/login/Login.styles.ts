@@ -10,7 +10,13 @@ export const WholeWrapper = styled.div`
   background-color: black;
   opacity: 0.8;
   height: 100%;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 `;
+
+export const ContentWrapper = styled.div``;
 
 export const Logo = styled.img`
   width: 350px;
@@ -76,24 +82,41 @@ export const BottomLine = styled.div`
   border-color: white;
 `;
 export const InfoBox = styled.div`
-  display: grid;
-  grid-template-columns: 30% 40% 30%;
+  padding-top: 50px;
+  display: flex;
+  height: 100px;
+  line-height: 64px;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: center;
+  button {
+    height: 30px;
+    border-right: solid 1px white;
+  }
 `;
 
-export const FindEmail = styled.div`
-  width: 70px;
-  align-content: center;
-  border-right: white;
-`;
-
-export const FindPassword = styled.div`
-  width: 70px;
-  align-content: center;
-  border-right: white;
-`;
-
-export const JoinMember = styled.div`
-  width: 70px;
+export const FindEmail = styled.button`
+  width: 100px;
   align-content: center;
   border: none;
+  color: white;
+  background-color: transparent;
+`;
+
+export const FindPassword = styled.button`
+  width: 100px;
+  align-content: center;
+  border: none;
+  color: white;
+  background-color: transparent;
+  align-content: space-between;
+`;
+
+export const JoinMember = styled.button`
+  width: 100px;
+  align-content: center;
+  border: none;
+  border-right: none !important;
+  color: white;
+  background-color: transparent;
 `;

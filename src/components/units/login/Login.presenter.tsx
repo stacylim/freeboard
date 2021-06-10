@@ -19,7 +19,11 @@ import {
   LoginWrapper,
   LoginStatus,
   ContentWrapper,
+  EmailInputError,
+  PasswordInputError,
+  PasswordInputWrapper,
 } from "./Login.styles";
+// import { PasswordInputWrapper } from "../join/Join.styles";
 
 export default function loginListUI({}) {
   return (
@@ -35,13 +39,20 @@ export default function loginListUI({}) {
                 placeholder="이메일을 입력해주세요."
                 onChange={EmailInput}
               />
+              <EmailInputError>이메일은 필수 입력입니다.</EmailInputError>
             </EmailInputWrapper>
-            <PasswordInput
-              name="passwordinput"
-              type="text"
-              placeholder="비밀번호를 입력해주세요."
-              onChange={PasswordInput}
-            />
+
+            <PasswordInputWrapper>
+              <PasswordInput
+                name="passwordinput"
+                type="password"
+                placeholder="비밀번호를 입력해주세요."
+                onChange={PasswordInput}
+              />
+              <PasswordInputError>
+                비밀번호는 필수 입력입니다.
+              </PasswordInputError>
+            </PasswordInputWrapper>
             {/* 인풋에있는 글자가 변경됐을때 세이브서치라는 함수를 실행 */}
 
             <LoginWrapper>
@@ -49,7 +60,7 @@ export default function loginListUI({}) {
               <LoginStatus>로그인 상태 유지</LoginStatus>
             </LoginWrapper>
             <LoginSubmit>로그인하기</LoginSubmit>
-            <BottomLine></BottomLine>
+            <BottomLine src="/line.png"></BottomLine>
 
             <InfoBox>
               <FindEmail>이메일 찾기</FindEmail>

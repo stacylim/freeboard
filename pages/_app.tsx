@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
       {/* <div> */}
-      {router.pathname !== "/login" && <UpperHeader />}
+      {router.pathname !== "/login" || ("/sign-up" && <UpperHeader />)}
 
       <Component {...pageProps} />
       {/* </div> */}

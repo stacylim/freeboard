@@ -30,6 +30,11 @@ export const EmailInputWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
+export const PasswordInputWrapper = styled.div`
+  /* background-color: black; */
+  padding-bottom: 20px;
+`;
+
 export const EmailInput = styled.input`
   width: 384px;
   height: 64px;
@@ -77,7 +82,16 @@ export const LoginSubmit = styled.div`
   color: white;
 `;
 
-export const BottomLine = styled.div`
+export const EmailInputError = styled.div`
+  color: red;
+`;
+
+export const PasswordInputError = styled.div`
+  color: red;
+`;
+
+export const BottomLine = styled.img`
+  padding-top: 50px;
   border-bottom: 384px;
   border-color: white;
 `;
@@ -89,6 +103,7 @@ export const InfoBox = styled.div`
   flex-direction: row;
   align-content: space-between;
   justify-content: center;
+
   button {
     height: 30px;
     border-right: solid 1px white;

@@ -4,71 +4,94 @@ import { render } from "react-dom";
 import React from "react";
 
 import {
+  BackgroundWrapper,
   WholeWrapper,
+  MemberJoin,
   PasswordInput,
   EmailInput,
   EmailInputWrapper,
+  LoginSubmit,
+  BottomLine,
+  InfoBox,
+  FindEmail,
+  FindPassword,
   JoinMember,
-  PasswordCheckWrapper,
-  PasswordCheckInput,
-  PasswordCheck,
+  LoginWrapper,
+  LoginStatus,
+  ContentWrapper,
+  EmailInputError,
+  PasswordInputError,
   PasswordInputWrapper,
-  Password,
-  NameInputWrapper,
-  Name,
   Email,
+  NameWrapper,
   NameInput,
-  Member,
+  Name,
+  NameInputError,
+  Password,
+  JoinSubmit,
 } from "./Join.styles";
+// import { PasswordInputWrapper } from "../join/Join.styles";
 
-export default function joinListUI({}) {
+export default function JoinListUI({}) {
   return (
-    <WholeWrapper>
-      <Member>회원가입 </Member>
-      <EmailInputWrapper>
-        <Email>이메일</Email>
-        <EmailInput
-          name="emailinput"
-          type="text"
-          placeholder="이메일을 입력해주세요."
-          onChange={EmailInput}
-        />
-      </EmailInputWrapper>
-      <NameInputWrapper>
-        <Name>이름</Name>
-        <NameInput
-          name="nameinput"
-          type="text"
-          placeholder="이름을 입력해주세요."
-          onChange={NameInput}
-        />
-      </NameInputWrapper>
+    <>
+      <BackgroundWrapper>
+        <WholeWrapper>
+          <ContentWrapper>
+            <MemberJoin>회원가입</MemberJoin>
 
-      <PasswordInputWrapper>
-        <Password>비밀번호</Password>
+            <EmailInputWrapper>
+              <Email>이메일</Email>
+              <EmailInput
+                name="emailinput"
+                type="text"
+                placeholder="이메일을 입력해주세요."
+                onChange={EmailInput}
+              />
+              <EmailInputError>이메일은 필수 입력입니다.</EmailInputError>
+            </EmailInputWrapper>
 
-        <PasswordInput
-          name="passwordinput"
-          type="text"
-          placeholder="비밀번호를 입력해주세요."
-          onChange={PasswordInput}
-        />
-        {/* 인풋에있는 글자가 변경됐을때 세이브서치라는 함수를 실행 */}
-      </PasswordInputWrapper>
+            <NameWrapper>
+              <Name>이름</Name>
+              <NameInput
+                name="nameinput"
+                type="text"
+                placeholder="이름을 입력해주세요."
+                onChange={NameInput}
+              />
+              <NameInputError>이름은 필수 입력입니다.</NameInputError>
+            </NameWrapper>
 
-      <PasswordCheckWrapper>
-        <PasswordCheck>비밀번호 확인</PasswordCheck>
+            <PasswordInputWrapper>
+              <Password>비밀번호</Password>
+              <PasswordInput
+                name="passwordinput"
+                type="password"
+                placeholder="비밀번호를 입력해주세요."
+                onChange={PasswordInput}
+              />
+              <PasswordInputError>
+                비밀번호는 필수 입력입니다.
+              </PasswordInputError>
+            </PasswordInputWrapper>
 
-        <PasswordCheckInput
-          name="passwordcheckinput"
-          type="text"
-          placeholder="비밀번호를 한번 더 입력해주세요."
-          onChange={PasswordCheckInput}
-        />
-        {/* 인풋에있는 글자가 변경됐을때 세이브서치라는 함수를 실행 */}
-      </PasswordCheckWrapper>
+            <PasswordInputWrapper>
+              <Password>비밀번호 확인</Password>
+              <PasswordInput
+                name="passwordinput"
+                type="password"
+                placeholder="비밀번호를 재입력해주세요."
+                onChange={PasswordInput}
+              />
+              <PasswordInputError>
+                비밀번호는 필수 입력입니다.
+              </PasswordInputError>
+            </PasswordInputWrapper>
 
-      <JoinMember>회원가입하기</JoinMember>
-    </WholeWrapper>
+            <JoinSubmit>회원가입하기</JoinSubmit>
+          </ContentWrapper>
+        </WholeWrapper>
+      </BackgroundWrapper>
+    </>
   );
 }

@@ -1,7 +1,7 @@
-import LoginListUI from "./Join.presenter";
+import JoinListUI from "./Join.presenter";
 
-const LoginList = () => {
-  return <LoginListUI />;
+const JoinList = () => {
+  return <JoinListUI />;
 };
 
-export default LoginList;
+export default JoinList;

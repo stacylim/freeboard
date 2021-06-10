@@ -1,36 +1,74 @@
 import styled from "@emotion/styled";
 
-export const Wrapper = styled.div`
-  width: 1920px;
-  height: 100px;
+export const BackgroundWrapper = styled.div`
+  background-image: url("/Back.png");
+  height: 100%;
 `;
 
-export const WholeWrapper = styled.div``;
+export const WholeWrapper = styled.div`
+  align-content: center;
+  background-color: black;
+  opacity: 0.8;
+  height: 100%;
+`;
 
-export const Logo = styled.img``;
+export const Logo = styled.img`
+  width: 350px;
+  padding: 20px;
 
-export const EmailInputWrapper = styled.div``;
+  align-content: center;
+`;
+
+export const EmailInputWrapper = styled.div`
+  background-color: black;
+  padding-bottom: 20px;
+`;
 
 export const EmailInput = styled.input`
   width: 384px;
   height: 64px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 16px;
 `;
 
-export const LoginWrapper = styled.div``;
+export const PasswordInput = styled.input`
+  width: 384px;
+  height: 64px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 16px;
+`;
 
-export const LoginStatus = styled.div``;
+export const LoginWrapper = styled.div`
+  width: 400px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+`;
 
-export const PasswordInput = styled.input``;
+export const LoginStatus = styled.div`
+  width: 120px;
+  align-content: center;
+  color: white;
+`;
 
 export const Checkbox = styled.div`
   width: 20px;
   height: 20px;
+  color: white;
 `;
 
 export const LoginSubmit = styled.div`
   width: 384px;
   height: 64px;
   background-color: #4f4f4f;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  text-align: center;
+  padding-top: 20px;
+  color: white;
 `;
 
 export const BottomLine = styled.div`

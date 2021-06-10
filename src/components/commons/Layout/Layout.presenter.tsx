@@ -1,4 +1,10 @@
-import { Body, Navigation, Header, Wrapper, CarouselWrapper } from "./Layout.styles";
+import {
+  Body,
+  Navigation,
+  Header,
+  Wrapper,
+  CarouselWrapper,
+} from "./Layout.styles";
 import React from "react";
 import Carousel from "react-img-carousel";
 
@@ -8,7 +14,7 @@ const LayoutUI = ({ children }) => {
       <Header></Header>
       <CarouselWrapper></CarouselWrapper>
       <Navigation></Navigation>
-      <Body>{children}</Body>
+      {/* <Body>{children}</Body> */}
       {/* <Footer>푸터영역</Footer> */}
     </Wrapper>
   );

@@ -37,27 +37,6 @@ export const HeadWrapper = styled.div`
   align-items: center;
 `;
 
-export const CarouselWrapper = styled.div`
-  height: 400px;
-  width: 100%;
-  //라이브러리에서 클래스를 확인하고 .을 찍어주고 상위랩퍼에서 스타일 변경을 해주면된다.
-  .carousel-viewport {
-    height: 350px !important;
-  }
-  .carousel-left-arrow {
-    left: 25%;
-    top: 50%;
-  }
-  .carousel-right-arrow {
-    right: 25%;
-    top: 50%;
-  }
-  .carousel-dots {
-    bottom: 10px;
-  }
-  /* height: 400px; */
-`;
-
 export const Carousel = styled.div``;
 
 export const Carouselmg = styled.img`

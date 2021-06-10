@@ -38,7 +38,7 @@ export default function HeaderUI(
         </LoginJoinWrapper>
       </LogoHeaderWrapper>
 
-      <ListImageWrapper>
+      {/* <ListImageWrapper>
         <HeadWrapper>
           <CarouselWrapper>
             <Carousel
@@ -53,7 +53,7 @@ export default function HeaderUI(
             </Carousel>
           </CarouselWrapper>
         </HeadWrapper>
-      </ListImageWrapper>
+      </ListImageWrapper> */}
     </div>
   );
 }

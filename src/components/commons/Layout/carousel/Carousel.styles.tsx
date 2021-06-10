@@ -40,8 +40,9 @@ export const HeadWrapper = styled.div`
 export const CarouselWrapper = styled.div`
   height: 400px;
   width: 100%;
+
   //라이브러리에서 클래스를 확인하고 .을 찍어주고 상위랩퍼에서 스타일 변경을 해주면된다.
-  .carousel-viewport {
+  /* .carousel-viewport {
     height: 350px !important;
   }
   .carousel-left-arrow {
@@ -54,7 +55,7 @@ export const CarouselWrapper = styled.div`
   }
   .carousel-dots {
     bottom: 10px;
-  }
+  } */
   /* height: 400px; */
 `;
 
@@ -69,7 +70,6 @@ export const Carouselmg = styled.img`
 export const NavigationWrapper = styled.div`
   width: 100%;
   height: 64px;
-  margin-top: 145px;
   /* display: flex; */
   flex-direction: center;
   align-content: center;

@@ -69,7 +69,6 @@ export const Carouselmg = styled.img`
 export const NavigationWrapper = styled.div`
   width: 100%;
   height: 64px;
-  margin-top: 145px;
   /* display: flex; */
   flex-direction: center;
   align-content: center;

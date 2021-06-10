@@ -1,11 +1,14 @@
 import "../styles/globals.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import React from "react";
-import Layout from "../src/components/commons/Layout/Layout.container";
+// import Layout from "../src/components/commons/Layout/Layout.container";
 import { useRouter } from "next/router";
-function MyApp({ Component, pageProps }) {
-  const Router = useRouter();
+// import Layout from "../src/components/commons/Layout/Layout.container";
+import UpperHeader from "../src/components/commons/Layout/index";
+import loginListUI from "../src/components/units/login/Login.presenter";
 
+function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   const client = new ApolloClient({
     uri: "http://backend.codebootcamp.co.kr/graphql",
     cache: new InMemoryCache(),
@@ -13,9 +16,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={client}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {/* <div> */}
+      {router.pathname !== "/login" && <UpperHeader />}
+
+      <Component {...pageProps} />
+      {/* </div> */}
     </ApolloProvider>
   );
 }

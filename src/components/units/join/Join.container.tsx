@@ -1,4 +1,4 @@
-import LoginListUI from "./Login.presenter";
+import LoginListUI from "./Join.presenter";
 
 const LoginList = () => {
   return <LoginListUI />;

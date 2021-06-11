@@ -62,7 +62,10 @@ import {
   PageNationWrapper,
   CarouselWrapper,
   BoardList,
+  Prev,
+  Next,
 } from "./Board.List.styles";
+
 require("react-img-carousel/lib/carousel.css");
 
 var settings = {
@@ -80,6 +83,11 @@ export default function BoardListUI({
   onClickSearchBox,
   onClickPage1,
   onClickDelete,
+  pageArray,
+  prevBlock,
+  nextBlock,
+  setBlock,
+  moveBlock,
 }) {
   return (
     <ListWrapper>
@@ -231,11 +239,31 @@ export default function BoardListUI({
 
           <BottomWrapper>
             <PageNationWrapper>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((data) => (
-                <Num1 id={String(data)} onClick={onClickPage1}>
-                  {data}
+              {/* {prevBlock === true && <Prev src="/prev.png" />} */}
+              {/* 위의 조건은 필요할때만 괄호가 나타나게 하는 함수.  */}
+              <Prev
+                src="/prev.png"
+                onClick={() => prevBlock === true && moveBlock("prev")}
+              />
+              {/* prevBlock이 마이너스 일때는 표시하지 않게 하기 위해서 true일때만 기능을 할 수 있도록 조건을 걸어줌 
+              onClick안에서 따로따로 함수를 만들어주지 않고, 현재 사용했던 State값을 활용하여 
+              식으로 표현한 것이다. prev는 State에서 setBlock 이전의 Block값이다. */}
+              {pageArray?.map((page, key) => {
+                return (
+                  <Num1 id={String(page)} key={key} onClick={onClickPage1}>
+                    {page}
+                  </Num1>
+                );
+              })}
+              <Next
+                src="/next.png"
+                onClick={() => nextBlock === true && moveBlock("next")}
+              />
+              {/* {PageArray?.map((page)(
+                <Num1 id={String(page)} onClick={onClickPage1}>
+                  {page}
                 </Num1>
-              ))}
+              ))} */}
             </PageNationWrapper>
             <PageNumberWrapper>
               <BoardPen src="/pen.png"></BoardPen>

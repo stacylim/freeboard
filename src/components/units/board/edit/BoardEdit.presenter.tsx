@@ -118,9 +118,7 @@ export default function BoardEditUI({
       </OptionWrapper>
       <ButtonWrapper>
         <CancelButton onClick={onClickCancel}> 취소하기</CancelButton>
-        <SubmitButton onClick={onClickEdit} >
-          수정하기
-        </SubmitButton>
+        <SubmitButton onClick={onClickEdit}>수정하기</SubmitButton>
       </ButtonWrapper>
     </Wrapper>
   );

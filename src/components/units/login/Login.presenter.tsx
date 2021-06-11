@@ -25,7 +25,13 @@ import {
 } from "./Login.styles";
 // import { PasswordInputWrapper } from "../join/Join.styles";
 
-export default function loginListUI({}) {
+export default function loginListUI({
+  onClickCreate,
+  isActive,
+  onChangeInput,
+  clickSignup,
+  inputs,
+}) {
   return (
     <>
       <BackgroundWrapper>
@@ -37,7 +43,8 @@ export default function loginListUI({}) {
                 name="emailinput"
                 type="text"
                 placeholder="이메일을 입력해주세요."
-                onChange={EmailInput}
+                // onChange={EmailInput}
+                onChange={onChangeInput}
               />
               <EmailInputError>이메일은 필수 입력입니다.</EmailInputError>
             </EmailInputWrapper>
@@ -47,7 +54,7 @@ export default function loginListUI({}) {
                 name="passwordinput"
                 type="password"
                 placeholder="비밀번호를 입력해주세요."
-                onChange={PasswordInput}
+                onChange={onChangeInput}
               />
               <PasswordInputError>
                 비밀번호는 필수 입력입니다.

@@ -40,7 +40,7 @@ export const LogoWrapper = styled.div`
 `;
 
 export const Num1 = styled.button`
-  width: 10px;
+  width: 25px;
   height: 19px;
   border: none;
   background-color: white;
@@ -306,6 +306,16 @@ export const MiddleSearchWrapper = styled.div`
   width: 100%;
 `;
 
+export const Prev = styled.img`
+  width: 7.41px;
+  height: 12px;
+`;
+
+export const Next = styled.img`
+  width: 7.41px;
+  height: 12px;
+`;
+
 export const SearchInputImgWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -350,7 +360,12 @@ export const BoardRegister = styled.div`
   background-color: white;
   margin-left: 10px;
 `;
-export const PageNationWrapper = styled.div``;
+export const PageNationWrapper = styled.div`
+  img {
+    width: 7.41px;
+    height: 12px;
+  }
+`;
 
 export const BottomWrapper = styled.div`
   margin-top: 60px;

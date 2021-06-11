@@ -27,6 +27,7 @@ export const Logo = styled.img`
 
 export const EmailInputWrapper = styled.div`
   background-color: black;
+  padding-top: 20px;
   padding-bottom: 20px;
 `;
 
@@ -81,6 +82,10 @@ export const LoginSubmit = styled.div`
   padding-top: 20px;
   color: white;
 `;
+
+export const Prev = styled.img``;
+
+export const Next = styled.img``;
 
 export const EmailInputError = styled.div`
   color: red;

@@ -61,7 +61,7 @@ export const EmailInputWrapper = styled.div`
 
 export const PasswordInputWrapper = styled.div`
   /* background-color: black; */
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 `;
 
 export const EmailInput = styled.input`
@@ -130,50 +130,4 @@ export const EmailInputError = styled.div`
 
 export const PasswordInputError = styled.div`
   color: red;
-`;
-
-export const BottomLine = styled.img`
-  padding-top: 50px;
-  border-bottom: 384px;
-  border-color: white;
-`;
-export const InfoBox = styled.div`
-  padding-top: 50px;
-  display: flex;
-  height: 100px;
-  line-height: 64px;
-  flex-direction: row;
-  align-content: space-between;
-  justify-content: center;
-
-  button {
-    height: 30px;
-    border-right: solid 1px white;
-  }
-`;
-
-export const FindEmail = styled.button`
-  width: 100px;
-  align-content: center;
-  border: none;
-  color: white;
-  background-color: transparent;
-`;
-
-export const FindPassword = styled.button`
-  width: 100px;
-  align-content: center;
-  border: none;
-  color: white;
-  background-color: transparent;
-  align-content: space-between;
-`;
-
-export const JoinMember = styled.button`
-  width: 100px;
-  align-content: center;
-  border: none;
-  border-right: none !important;
-  color: white;
-  background-color: transparent;
 `;

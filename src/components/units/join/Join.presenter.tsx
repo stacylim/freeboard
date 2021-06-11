@@ -1,5 +1,4 @@
 import { getDefaultValues } from "@apollo/client/utilities";
-import { Checkbox } from "@material-ui/core";
 import { render } from "react-dom";
 import React from "react";
 
@@ -60,7 +59,9 @@ export default function JoinListUI({
                 placeholder="이름을 입력해주세요."
                 onChange={onChangeInput}
               />
-              <NameInputError>이름은 필수 입력입니다.</NameInputError>
+              {clickSignup === true && inputs.name.length === 0 && (
+                <NameInputError>이름은 필수 입력입니다.</NameInputError>
+              )}
             </NameWrapper>
 
             <PasswordInputWrapper>
@@ -71,9 +72,11 @@ export default function JoinListUI({
                 placeholder="비밀번호를 입력해주세요."
                 onChange={onChangeInput}
               />
-              <PasswordInputError>
-                비밀번호는 필수 입력입니다.
-              </PasswordInputError>
+              {clickSignup === true && inputs.password.length === 0 && (
+                <PasswordInputError>
+                  비밀번호는 필수 입력입니다.
+                </PasswordInputError>
+              )}
             </PasswordInputWrapper>
 
             <PasswordInputWrapper>
@@ -84,14 +87,14 @@ export default function JoinListUI({
                 placeholder="비밀번호를 재입력해주세요."
                 onChange={onChangeInput}
               />
-              <PasswordInputError>
-                비밀번호는 필수 입력입니다.
-              </PasswordInputError>
+              {clickSignup === true && inputs.passwordconfirm.length === 0 && (
+                <PasswordInputError>
+                  비밀번호는 필수 입력입니다.
+                </PasswordInputError>
+              )}
             </PasswordInputWrapper>
 
-            <JoinSubmit onClick={onClickCreate} disabled={!isActive}>
-              회원가입하기
-            </JoinSubmit>
+            <JoinSubmit onClick={onClickCreate}>회원가입하기</JoinSubmit>
           </ContentWrapper>
         </WholeWrapper>
       </BackgroundWrapper>

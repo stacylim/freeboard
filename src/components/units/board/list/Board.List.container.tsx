@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 const BoardList = () => {
   const client = useApolloClient();
   const [search, setSearch] = useState("");
+  const [block, setBlock] = useState(1);
+
   //빈따옴표 값은 문자열이란 뜻
   //스테이트순서가 위에있어야 아래 useQuery로 인자를 보낼때 사용할수있다.
 
@@ -19,7 +21,7 @@ const BoardList = () => {
     variables: { page: currentPage, search: search },
   });
 
-  console.log(data);
+  //useQuery에서 제공하는 기본기능, loading이 true일때는 데이터를 불러오고있는 상황.false 일때는 데이터를 다 불러온 상황
 
   const { data: boardCount, loading: boardsLoding } = useQuery(
     FETCH_BOARDS_COUNT,
@@ -59,12 +61,53 @@ const BoardList = () => {
   // };
 
   if (loading === false && boardsLoding === false) {
-    //let은 변수로 할당해주기 위해 사용
-    let totalPage = Math.floor(boardCount.fetchBoardsCount / 10);
-    if (totalPage !== 0) {
-      totalPage = totalPage + 1;
+    //1. 모든 게시물의 수를 카운트하기, 보드카운트에 값이 있으면, 보드카운트에 페치보드카운트값을 담아주는 것
+    //2. 페이지수 = 게시글수에서 /10 한 값의 올림
+    //3. 블럭수 = 10씩 나눈 구역의 값.
+    const AllCount = boardCount && boardCount.fetchBoardsCount;
+    console.log(AllCount);
+    const AllPage = Math.ceil(AllCount / 10);
+    console.log(AllPage);
+    const Blocks = Math.ceil(AllPage / 10);
+    console.log(Blocks);
+
+    const PageArray = [];
+
+    const BlockStartPage = block * 10 - 9;
+    const BlockEndPage = block * 10 > AllPage ? AllPage : block * 10;
+
+    for (let i = BlockStartPage; i <= BlockEndPage; i++) {
+      PageArray.push(i);
+      //push는 배열안에 값을 넣을때 넣는 메소드
+      //블럭*10> AllPage 보다 크면 ? 트루값 : 아닐시 false값 block*10 값
     }
-    console.log(totalPage);
+    console.log(block);
+
+    const prevBlock = block > 1 && AllCount > 0 ? true : false;
+    const nextBlock = block !== Blocks ? true : false;
+
+    const moveBlock = (type) => {
+      if (type === "prev") {
+        setCurrentPage(BlockEndPage);
+        setBlock((prev) => prev - 1);
+      } else if (type === "next") {
+        setCurrentPage(BlockStartPage);
+        setBlock((prev) => prev + 1);
+      }
+    };
+
+    console.log(prevBlock);
+
+    // 마지막페이지가 총페이지보다 클 경우에는 마지막 페이지를 총 페이지로 대신한다.
+    //예) 149페이지일 경우 마지막 페이지는 9페이지만 필요하므로, 블럭*10보다 더 작다. 그래서 마지막페이지는 총페이지로 대체
+
+    //let은 변수로 할당해주기 위해 사용
+    // let totalPage = Math.floor(boardCount.fetchBoardsCount / 10);
+    // if (totalPage !== 0) {
+    //   totalPage = totalPage + 1;
+    // }
+    // console.log(totalPage);
+
     // 데이터 조회가 완료됐을 때 === false
     // 보드로딩 조회가 완료됐을 때만 실행되게끔 해주는 것
     return (
@@ -74,7 +117,11 @@ const BoardList = () => {
         saveSearch={saveSearch}
         onClickSearchBox={onClickSearchBox}
         onClickPage1={onClickPage1}
-
+        pageArray={PageArray}
+        prevBlock={prevBlock}
+        nextBlock={nextBlock}
+        setBlock={setBlock}
+        moveBlock={moveBlock}
         //   onClickPage={onClickPage}
       />
     );

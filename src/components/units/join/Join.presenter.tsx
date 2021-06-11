@@ -10,14 +10,6 @@ import {
   PasswordInput,
   EmailInput,
   EmailInputWrapper,
-  LoginSubmit,
-  BottomLine,
-  InfoBox,
-  FindEmail,
-  FindPassword,
-  JoinMember,
-  LoginWrapper,
-  LoginStatus,
   ContentWrapper,
   EmailInputError,
   PasswordInputError,
@@ -30,9 +22,8 @@ import {
   Password,
   JoinSubmit,
 } from "./Join.styles";
-// import { PasswordInputWrapper } from "../join/Join.styles";
 
-export default function JoinListUI({}) {
+export default function JoinListUI({ onClickCreate, isActive, onChangeInput }) {
   return (
     <>
       <BackgroundWrapper>
@@ -46,7 +37,7 @@ export default function JoinListUI({}) {
                 name="emailinput"
                 type="text"
                 placeholder="이메일을 입력해주세요."
-                onChange={EmailInput}
+                onChange={onChangeInput}
               />
               <EmailInputError>이메일은 필수 입력입니다.</EmailInputError>
             </EmailInputWrapper>
@@ -57,7 +48,7 @@ export default function JoinListUI({}) {
                 name="nameinput"
                 type="text"
                 placeholder="이름을 입력해주세요."
-                onChange={NameInput}
+                onChange={onChangeInput}
               />
               <NameInputError>이름은 필수 입력입니다.</NameInputError>
             </NameWrapper>
@@ -68,7 +59,7 @@ export default function JoinListUI({}) {
                 name="passwordinput"
                 type="password"
                 placeholder="비밀번호를 입력해주세요."
-                onChange={PasswordInput}
+                onChange={onChangeInput}
               />
               <PasswordInputError>
                 비밀번호는 필수 입력입니다.
@@ -81,14 +72,16 @@ export default function JoinListUI({}) {
                 name="passwordinput"
                 type="password"
                 placeholder="비밀번호를 재입력해주세요."
-                onChange={PasswordInput}
+                onChange={onChangeInput}
               />
               <PasswordInputError>
                 비밀번호는 필수 입력입니다.
               </PasswordInputError>
             </PasswordInputWrapper>
 
-            <JoinSubmit>회원가입하기</JoinSubmit>
+            <JoinSubmit onClick={onClickCreate} disabled={!isActive}>
+              회원가입하기
+            </JoinSubmit>
           </ContentWrapper>
         </WholeWrapper>
       </BackgroundWrapper>

@@ -23,7 +23,13 @@ import {
   JoinSubmit,
 } from "./Join.styles";
 
-export default function JoinListUI({ onClickCreate, isActive, onChangeInput }) {
+export default function JoinListUI({
+  onClickCreate,
+  isActive,
+  onChangeInput,
+  clickSignup,
+  inputs,
+}) {
   return (
     <>
       <BackgroundWrapper>
@@ -34,18 +40,22 @@ export default function JoinListUI({ onClickCreate, isActive, onChangeInput }) {
             <EmailInputWrapper>
               <Email>이메일</Email>
               <EmailInput
-                name="emailinput"
+                name="email"
+                //container state값과 동일하게 맞춰주면 좋다.
                 type="text"
                 placeholder="이메일을 입력해주세요."
                 onChange={onChangeInput}
               />
-              <EmailInputError>이메일은 필수 입력입니다.</EmailInputError>
+              {/* ===강력하게, ==타입까지 받는 검사, ===이 좋다.  */}
+              {clickSignup === true && inputs.email.length === 0 && (
+                <EmailInputError> 이메일은 필수 입력입니다.</EmailInputError>
+              )}
             </EmailInputWrapper>
 
             <NameWrapper>
               <Name>이름</Name>
               <NameInput
-                name="nameinput"
+                name="name"
                 type="text"
                 placeholder="이름을 입력해주세요."
                 onChange={onChangeInput}
@@ -56,7 +66,7 @@ export default function JoinListUI({ onClickCreate, isActive, onChangeInput }) {
             <PasswordInputWrapper>
               <Password>비밀번호</Password>
               <PasswordInput
-                name="passwordinput"
+                name="password"
                 type="password"
                 placeholder="비밀번호를 입력해주세요."
                 onChange={onChangeInput}
@@ -69,7 +79,7 @@ export default function JoinListUI({ onClickCreate, isActive, onChangeInput }) {
             <PasswordInputWrapper>
               <Password>비밀번호 확인</Password>
               <PasswordInput
-                name="passwordinput"
+                name="passwordconfirm"
                 type="password"
                 placeholder="비밀번호를 재입력해주세요."
                 onChange={onChangeInput}

@@ -1,4 +1,47 @@
-<RegisterWholeWrqpper>
+import React from "react";
+import {
+  ProductRegister,
+  RegisterWholeWrapper,
+  ProductName,
+  ProductNameInput,
+  Summary,
+  SummaryInput,
+  ProductDetail,
+  SummaryTool,
+  ProductDetailInput,
+  Price,
+  PriceInput,
+  Tag,
+  TagInput,
+  MapWrapper,
+  LocationWrapper,
+  Location,
+  RightWrapper,
+  GPS,
+  Latittude,
+  MapImg,
+  Longtitude,
+  Addr,
+  AddrInput1,
+  AddrInput2,
+  PhotoInclu,
+  PhotoOptions,
+  Radiobutton,
+  RegisterButton,
+} from "./productregister.styles";
+
+
+export default function ProductRegisterUI({
+   saveProductName,
+   SaveSummary,
+   SaveProductInfo,
+   SavePrice,
+  })
+  {
+    return (
+
+
+<RegisterWholeWrapper>
   <ProductRegister>상품 등록하기</ProductRegister>
 
   <ProductName>상품명</ProductName>
@@ -33,14 +76,14 @@
   />
 
   <Tag>태그입력</Tag>
-  <TagIput name="taginput" type="text" placeholder="#태그 #태그 #태그" />
+  <TagInput name="taginput" type="text" placeholder="#태그 #태그 #태그" />
   <MapWrapper>
     <LocationWrapper>
       <Location>거래위치</Location>
     </LocationWrapper>
     <RightWrapper>
       <GPS>GPS</GPS>
-      <Latitude>위도</Latitude>
+      <Latittude>위도</Latittude>
       <MapImg></MapImg>
       <Longtitude>경도</Longtitude>
       <Addr>주소</Addr>
@@ -58,9 +101,10 @@
     </RightWrapper>
     <PhotoInclu>사진 첨부</PhotoInclu>
     <PhotoOptions>메인 사진 설정</PhotoOptions>
-    <radiobutton>사진1</radiobutton>
-    <radiobutton>사진2</radiobutton>
+    <Radiobutton>사진1</Radiobutton>
+    <Radiobutton>사진2</Radiobutton>
   </MapWrapper>
 
   <RegisterButton>등록하기</RegisterButton>
-</RegisterWholeWrqpper>;
+</RegisterWholeWrapper>
+    );

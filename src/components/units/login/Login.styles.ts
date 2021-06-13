@@ -83,9 +83,7 @@ export const LoginSubmit = styled.div`
   color: white;
 `;
 
-export const Prev = styled.img``;
 
-export const Next = styled.img``;
 
 export const EmailInputError = styled.div`
   color: red;

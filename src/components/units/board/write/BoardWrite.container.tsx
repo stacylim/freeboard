@@ -44,11 +44,10 @@ export default function BoardWrite({ defaultValues }) {
           },
         },
       });
-     
+
       alert("게시물이 성공적으로 등록되었습니다.");
 
       router.push(`/Boards/${result.data.createBoard._id}`);
-      
     } catch (error) {
       alert(error.message);
     }

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const RegisterWholeWrapper = styled.div`
+export const EditWholeWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
@@ -15,10 +15,11 @@ export const WholeContentWrapper = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
-  /* grid-template-columns: 10% 80% 10%; */
 `;
 
 export const ContenrCenterWrapper = styled.div`
+  display: grid;
+
   align-items: center;
   justify-content: center;
   padding: 30px;
@@ -28,7 +29,7 @@ export const UpperContentWrapper = styled.div`
   width: 100%;
 `;
 
-export const ProductRegister = styled.div`
+export const ProductEdit = styled.div`
   font-family: Noto Sans CJK KR;
   font-style: normal;
   font-weight: bold;
@@ -269,17 +270,29 @@ export const Button2 = styled.div`
 
   width: 120px;
 `;
-export const RegisterButton = styled.button`
+export const CancelButton = styled.button`
   width: 179px;
   height: 52px;
   justify-content: center;
   align-content: center;
   text-align: center;
+  margin-right: 10px;
+  border: none;
+`;
+
+export const EditButton = styled.button`
+  width: 179px;
+  height: 52px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  background-color: #ffd600;
+  border: none;
 `;
 
 export const BottomWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
   text-align: center;

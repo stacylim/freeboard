@@ -17,6 +17,17 @@ export const WholeContentWrapper = styled.div`
   justify-content: center;
 `;
 
+export const UpperWrapper = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90% auto;
+`;
+
+export const Line = styled.img`
+  width: 792px;
+  margin-top: 22px;
+`;
+
 export const ContenrCenterWrapper = styled.div`
   display: grid;
 
@@ -25,122 +36,139 @@ export const ContenrCenterWrapper = styled.div`
   padding: 30px;
 `;
 
-export const UpperContentWrapper = styled.div`
+export const ProfileWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: row;
 `;
 
-export const ProductEdit = styled.div`
-  font-family: Noto Sans CJK KR;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  text-align: center;
-  margin-top: 50px;
-  width: 100%;
-  margin-bottom: 50px;
+export const SellerDateWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+`;
+
+export const Seller = styled.div`
+  width: 45px;
+`;
+
+export const Date = styled.div`
+  width: 100px;
+`;
+export const ProfileImg = styled.img`
+  width: 40px;
+  height: 40px;
+`;
+
+export const RightWrapper = styled.div`
+  width: 50px;
+
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Img1 = styled.img`
+  width: 20px;
+  height: 10px;
+  margin-top: 5px;
+  margin-right: 10px;
+`;
+
+export const Img2 = styled.img`
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
 `;
 
 export const ProductName = styled.div`
-  width: 100%;
+  width: 130px;
   font-family: Noto Sans CJK KR;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  padding-bottom: 20px;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #bdbdbd;
 `;
 
-export const ProductNameInput = styled.input`
-  width: 100%;
-  height: 52px;
-  border: 1px solid #bdbdbd;
-`;
-export const Summary = styled.div`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-
-  padding-top: 20px;
-  padding-bottom: 30px;
-`;
-export const SummaryInput = styled.input`
-  width: 100%;
-  height: 52px;
-  border: 1px solid #bdbdbd;
-`;
 export const ProductDetail = styled.div`
+  width: 260px;
+  font-family: Noto Sans CJK KR;
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  width: 59px;
-  height: 24px;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  font-weight: 700;
+  font-size: 24px;
+  padding-bottom: 10px;
+  color: #4f4f4f;
 `;
-export const SummaryTool = styled.div`
-  height: 52px;
-  width: 996px;
-`;
-export const ProductDetailInput = styled.input`
+
+export const ProductInfoWrapper = styled.div`
   width: 100%;
-  height: 320px;
-  border: 1px solid #bdbdbd;
 `;
+
+export const UpperContent = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90% auto;
+`;
+
+export const LeftWrapper = styled.div`
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const HeartWrapper = styled.div`
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const Heart = styled.img`
+  width: 36px;
+  height: 36px;
+`;
+
+export const HeartCount = styled.div`
+  padding-left: 8px;
+`;
+
+export const CarouselWrapper = styled.div``;
+
+export const Preview = styled.input``;
+
 export const Price = styled.div`
   font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  width: 65px;
-  height: 24px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-`;
-export const PriceInput = styled.input`
-  width: 100%;
-  height: 52px;
-  border: 1px solid #bdbdbd;
+  font-weight: 700;
+  font-size: 36px;
 `;
 
-export const Tag = styled.div`
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  width: 59px;
-  height: 24px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-`;
+export const CenterContent = styled.div``;
 
-export const TagInput = styled.input`
-  width: 100%;
-  height: 52px;
+export const ProductContent = styled.div``;
 
-  border: 1px solid #bdbdbd;
-`;
+export const ProductTag = styled.div``;
+
+export const MapWrapper = styled.div``;
+
+export const MapImg = styled.img``;
 
 export const BottomContentWrapper = styled.div`
   width: 100%;
 `;
-export const MapandLocationWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 45% auto;
-  padding-top: 30px;
+export const ListButton = styled.div`
+  width: 179px;
+  height: 52px;
+  font-size: 16px;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  background-color: #bdbdbd;
+  border: none;
 `;
-
-export const Mapimg = styled.img`
-  width: 384px;
-  height: 252px;
-`;
-
-export const LocationWrapper = styled.div``;
 
 export const Location = styled.div`
   padding-bottom: 16px;
-`;
-
-export const RightWrapper = styled.div`
-  width: 100%;
 `;
 
 export const AddrWrapper = styled.div`
@@ -213,10 +241,7 @@ export const Upload1 = styled.div`
   justify-content: center;
 `;
 
-export const Box1Img = styled.img`
-  width: 140px;
-  height: 140px;
-`;
+export const MainImg = styled.img``;
 
 export const UploadButton = styled.button`
   background-color: #bdbdbd;
@@ -269,15 +294,6 @@ export const Button2 = styled.div`
   grid-template-columns: 30% auto;
 
   width: 120px;
-`;
-export const CancelButton = styled.button`
-  width: 179px;
-  height: 52px;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  margin-right: 10px;
-  border: none;
 `;
 
 export const EditButton = styled.button`

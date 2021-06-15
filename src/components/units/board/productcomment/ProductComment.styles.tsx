@@ -43,20 +43,7 @@ export const ReplyWriterPasswordWrapper = styled.div`
   padding-top: 20px;
   margin-bottom: 20px;
 `;
-export const ReplyWriter = styled.input`
-  width: 180px;
-  height: 52px;
-  border: 1px, solid #bdbdbd;
-  background-color: white;
-  margin-right: 20px;
-`;
-export const ReplyPassword = styled.input`
-  width: 180px;
-  height: 52px;
-  border: 1px, solid #bdbdbd;
-  background-color: white;
-  margin-right: 20px;
-`;
+
 export const ReplyStarsWrapper = styled.div`
   width: 180px;
   height: 52px;
@@ -65,10 +52,6 @@ export const ReplyStarsWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
-`;
-export const ReplyStar = styled.img`
-  width: 20px;
-  height: 20px;
 `;
 
 export const ReplyContentWrapper = styled.div`
@@ -81,11 +64,12 @@ export const ReplyContentWrapper = styled.div`
 export const ReplyContent = styled.input`
   width: 1200px;
   height: 161px;
-  border: 1px, solid #BDBDBD;
-  color: #BDBDBD
+  border: 1px, solid #bdbdbd;
+  color: #bdbdbd;
   display: flex;
   justify-content: top;
 `;
+
 export const ReplyCountingWrapper = styled.div`
   width: 1200px;
   height: 52px;
@@ -95,27 +79,37 @@ export const ReplyCountingWrapper = styled.div`
   justify-content: space-between;
   padding-top: 2px;
 `;
-export const CountingWrapper = styled.div`
-  width: 1200px;
+
+export const Ask = styled.button`
+  width: 91px;
   height: 52px;
-  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  margin-left: 1010px;
+`;
+
+export const CountingWrapper = styled.div`
+  width: 100%;
+  height: 52px;
+  border: #bdbdbd;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  padding-left: 5px;
+  flex-direction: space-between;
 `;
 
 export const CountingRegisterWrapper = styled.div`
   width: 1200px;
-  border: 1px, solid #bdbdbd;
+  border: 1px solid #bdbdbd;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `;
+
 export const ReplyCounting = styled.div`
-  width: 1109px;
+  width: 100px;
   height: 52px;
-  border: 1px, solid #bdbdbd;
+  border: none;
+  align-content: center;
 `;
 export const ReplyRegister = styled.button`
   width: 91px;

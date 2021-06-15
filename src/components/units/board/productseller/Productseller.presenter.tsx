@@ -74,21 +74,26 @@ export default function ProductSellerUI({}) {
             <Price>240,120원</Price>
             <CenterContent>
               <CarouselWrapper>
-                <MainImg></MainImg>
-                <Preview></Preview>
+                <MainImg src="/galaxyAmain.png"></MainImg>
+                {/* <Preview></Preview> */}
               </CarouselWrapper>
             </CenterContent>
-            <ProductContent></ProductContent>
-            <ProductTag></ProductTag>
+            <ProductContent>
+              액정에 잔기스랑 주변부 ㅁㅇ ㅁㄴㅇㄹ ㅁㅇㄴ ㅁㅇㄴㅁㄹㅇ ㅇㅁㄹ
+            </ProductContent>
+            <ProductTag>#삼성전자 #갤러시탭 #갓성비</ProductTag>
           </ProductInfoWrapper>
+          <Line src="/greyline.png"></Line>
           <MapWrapper>
-            <MapImg></MapImg>
+            <MapImg src="/map.png"></MapImg>
           </MapWrapper>
+          <Line src="/greyline.png"></Line>
 
           <BottomWrapper>
             <ListButton>목록으로</ListButton>
             <EditButton>수정하기</EditButton>
           </BottomWrapper>
+          <Line src="/greyline.png"></Line>
         </ContenrCenterWrapper>
       </WholeContentWrapper>
       <div> </div>

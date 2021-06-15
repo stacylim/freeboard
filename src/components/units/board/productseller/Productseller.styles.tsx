@@ -135,7 +135,7 @@ export const HeartCount = styled.div`
 
 export const CarouselWrapper = styled.div``;
 
-export const Preview = styled.input``;
+export const Preview = styled.div``;
 
 export const Price = styled.div`
   font-style: normal;
@@ -143,40 +143,42 @@ export const Price = styled.div`
   font-size: 36px;
 `;
 
-export const CenterContent = styled.div``;
+export const CenterContent = styled.div`
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  padding: 30px;
+`;
 
-export const ProductContent = styled.div``;
+export const ProductContent = styled.div`
+  width: 100%;
+  height: 108px;
+`;
 
 export const ProductTag = styled.div``;
 
-export const MapWrapper = styled.div``;
-
-export const MapImg = styled.img``;
-
-export const BottomContentWrapper = styled.div`
-  width: 100%;
+export const MapWrapper = styled.div`
+  display: grid;
+  align-content: center;
+  justify-content: center;
 `;
-export const ListButton = styled.div`
+
+export const MapImg = styled.img`
+  width: 792px;
+  height: 360px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+`;
+
+export const ListButton = styled.button`
   width: 179px;
-  height: 52px;
+
   font-size: 16px;
   justify-content: center;
   align-content: center;
   text-align: center;
   background-color: #bdbdbd;
   border: none;
-`;
-
-export const Location = styled.div`
-  padding-bottom: 16px;
-`;
-
-export const AddrWrapper = styled.div`
-  width: 100%;
-`;
-
-export const GPS = styled.div`
-  padding-bottom: 16px;
 `;
 
 export const RightUpperWrapper = styled.div`
@@ -187,44 +189,11 @@ export const RightUpperWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-export const Latittude = styled.input`
-  width: 108px;
-  height: 52px;
-  border: 1px solid #bdbdbd;
-`;
-
 export const MapIcon = styled.img`
   align-content: center;
   padding-left: 10px;
   padding-top: 10px;
 `;
-
-export const Longtitude = styled.input`
-  width: 108px;
-  height: 52px;
-  border: 1px solid #bdbdbd;
-`;
-
-export const Addr = styled.div`
-  margin-bottom: 20px;
-`;
-export const AddrInput1 = styled.input`
-  width: 100%;
-  height: 52px;
-  border: 1px solid #bdbdbd;
-  margin-bottom: 10px;
-`;
-export const AddrInput2 = styled.input`
-  width: 100%;
-  height: 52px;
-  border: 1px solid #bdbdbd;
-`;
-
-export const PhotoWrapper = styled.div`
-  margin-top: 50px;
-`;
-
-export const PhotoInclu = styled.div``;
 
 export const UploadWrapper = styled.div`
   display: grid;
@@ -241,28 +210,15 @@ export const Upload1 = styled.div`
   justify-content: center;
 `;
 
-export const MainImg = styled.img``;
-
-export const UploadButton = styled.button`
-  background-color: #bdbdbd;
-  border: none;
-`;
-
-export const Upload2 = styled.div`
-  width: 180px;
-  height: 180px;
-  background: #bdbdbd;
-  display: grid;
-
-  align-content: center;
-  justify-content: center;
+export const MainImg = styled.img`
+  width: 296px;
+  height: 296px;
 `;
 
 export const ButtonWrapper = styled.div`
   width: 300px;
   display: grid;
   grid-template-columns: 50% auto;
-  margin: 30px;
 `;
 
 export const PhotoOptions = styled.div``;
@@ -299,11 +255,13 @@ export const Button2 = styled.div`
 export const EditButton = styled.button`
   width: 179px;
   height: 52px;
+  font-size: 16px;
   justify-content: center;
   align-content: center;
   text-align: center;
   background-color: #ffd600;
   border: none;
+  margin-left: 15px;
 `;
 
 export const BottomWrapper = styled.div`
@@ -312,4 +270,6 @@ export const BottomWrapper = styled.div`
   justify-content: center;
   align-content: center;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;

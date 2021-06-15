@@ -14,9 +14,9 @@ import {
   BoardWrapper,
   BottomWrapper,
   ProductRegister,
-} from "./usedmarket.main.styles";
+} from "./productList.styles";
 
-export default function UsedmarketMainUI({}) {
+export default function ProductListUI({}) {
   return (
     <MainWrapper>
       <MainTitle>베스트 상품</MainTitle>

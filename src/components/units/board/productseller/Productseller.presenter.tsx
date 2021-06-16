@@ -1,3 +1,4 @@
+import { List } from "@material-ui/core";
 import React from "react";
 
 import {
@@ -36,7 +37,14 @@ import {
   CenterContent,
 } from "./Productseller.styles";
 
-export default function ProductSellerUI({}) {
+export default function ProductSellerUI({
+  data,
+  onClickEdit,
+  onClickList,
+  isActive,
+  // onClickLike,
+  // onClickDislike,
+}) {
   return (
     <EditWholeWrapper>
       <div> </div>
@@ -46,8 +54,8 @@ export default function ProductSellerUI({}) {
             <ProfileWrapper>
               <ProfileImg src="/Profilephoto.png"></ProfileImg>
               <SellerDateWrapper>
-                <Seller>판매자</Seller>
-                <Date>Date.2021</Date>
+                <Seller>{data?.fetchUseditem?.seller}</Seller>
+                <Date>{data?.fetchUseditem?.createdAt}</Date>
               </SellerDateWrapper>
             </ProfileWrapper>
 
@@ -61,8 +69,8 @@ export default function ProductSellerUI({}) {
           <ProductInfoWrapper>
             <UpperContent>
               <LeftWrapper>
-                <ProductName>2019 LTE 32GB</ProductName>
-                <ProductDetail>삼성전자 갤럭시탭A 10.1</ProductDetail>
+                <ProductName>{data?.fetchUseditem?.name}</ProductName>
+                <ProductDetail>{data?.fetchUseditem?.remarks}</ProductDetail>
               </LeftWrapper>
 
               <HeartWrapper>
@@ -71,17 +79,15 @@ export default function ProductSellerUI({}) {
               </HeartWrapper>
             </UpperContent>
 
-            <Price>240,120원</Price>
+            <Price>{data?.fetchUseditem?.price}</Price>
             <CenterContent>
               <CarouselWrapper>
                 <MainImg src="/galaxyAmain.png"></MainImg>
                 {/* <Preview></Preview> */}
               </CarouselWrapper>
             </CenterContent>
-            <ProductContent>
-              액정에 잔기스랑 주변부 ㅁㅇ ㅁㄴㅇㄹ ㅁㅇㄴ ㅁㅇㄴㅁㄹㅇ ㅇㅁㄹ
-            </ProductContent>
-            <ProductTag>#삼성전자 #갤러시탭 #갓성비</ProductTag>
+            <ProductContent>{data?.fetchUseditem?.contents}</ProductContent>
+            <ProductTag>{data?.fetchUseditem?.tags}</ProductTag>
           </ProductInfoWrapper>
           <Line src="/greyline.png"></Line>
           <MapWrapper>
@@ -90,8 +96,8 @@ export default function ProductSellerUI({}) {
           <Line src="/greyline.png"></Line>
 
           <BottomWrapper>
-            <ListButton>목록으로</ListButton>
-            <EditButton>수정하기</EditButton>
+            <ListButton onClick={onClickList}>목록으로</ListButton>
+            <EditButton onClick={onClickEdit}>수정하기</EditButton>
           </BottomWrapper>
           <Line src="/greyline.png"></Line>
         </ContenrCenterWrapper>

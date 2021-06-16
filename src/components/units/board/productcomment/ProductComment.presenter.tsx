@@ -3,19 +3,15 @@ import InfiniteScroll from "react-infinite-scroller";
 // import BoardCommentUIItem from "./BoardComment.presenterItem";
 import {
   ReplyWholeWrapper,
-  ReplyUpperWrapper,
   ReplyImageWrapper,
   ReplyImage,
   Reply,
-  ReplyWriterPasswordWrapper,
   Ask,
   ReplyContentWrapper,
   ReplyContent,
   CountingRegisterWrapper,
   ReplyCounting,
   CountingWrapper,
-  ReplyRegister,
-  YellowStar,
 } from "./ProductComment.styles";
 
 export default function ProductCommentUI(

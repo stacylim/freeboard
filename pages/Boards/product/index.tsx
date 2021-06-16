@@ -1,4 +1,4 @@
-import ProductRegister from "../../../src/components/units/board/productregister/productregister.container";
+import ProductRegister from "../../../src/components/units/board/productregister/Productregister.container";
 
 const ProductRegisterPage = () => <ProductRegister />;
 

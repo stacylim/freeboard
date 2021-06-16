@@ -241,12 +241,12 @@ export const ButtonWrapper = styled.div`
 
 export const PhotoOptions = styled.div``;
 
-export const RadioOn = styled.img`
+export const RadioOn = styled.button`
   width: 24px;
   height: 24px;
 `;
 
-export const RadioOff = styled.img`
+export const RadioOff = styled.button`
   width: 24px;
   height: 24px;
 `;

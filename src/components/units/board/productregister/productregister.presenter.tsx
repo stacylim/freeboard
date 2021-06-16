@@ -49,14 +49,12 @@ import {
   AddrWrapper,
 } from "./Productregister.styles";
 
-export default function ProductRegisterUI(
-  {
-    // saveProductName,
-    // SaveSummary,
-    // SaveProductInfo,
-    // SavePrice,
-  }
-) {
+export default function ProductRegisterUI({
+  isActive,
+  onChangeInput,
+  onClickRegister,
+  defaultValues,
+}) {
   return (
     <RegisterWholeWrapper>
       <div> </div>
@@ -70,14 +68,16 @@ export default function ProductRegisterUI(
               name="productNameinput"
               type="text"
               placeholder="상품명을 작성해주세요."
-              // onChange={saveProductName}
+              onChange={onChangeInput}
+              defaultValue={defaultValues?.name}
             />
             <Summary>한줄요약</Summary>
             <SummaryInput
               name="summaryinput"
               type="text"
-              placeholder="상품명을 작성해주세요."
-              // onChange={saveSummary}
+              placeholder="한줄요약을 작성해주세요."
+              onChange={onChangeInput}
+              defaultValue={defaultValues?.remarks}
             />
             <ProductDetail>상품설명</ProductDetail>
             <SummaryTool>Tools</SummaryTool>
@@ -85,7 +85,8 @@ export default function ProductRegisterUI(
               name="productdetailinput"
               type="text"
               placeholder="상품설명을 작성해주세요."
-              // onChange={saveProductInfo}
+              onChange={onChangeInput}
+              defaultValue={defaultValues?.contents}
             />
 
             <Price>판매 가격</Price>
@@ -93,7 +94,8 @@ export default function ProductRegisterUI(
               name="priceinput"
               type="text"
               placeholder="판매가격을 작성해주세요."
-              // onChange={savePrice}
+              onChange={onChangeInput}
+              defaultValue={defaultValues?.price}
             />
 
             <Tag>태그입력</Tag>
@@ -101,6 +103,8 @@ export default function ProductRegisterUI(
               name="taginput"
               type="text"
               placeholder="#태그 #태그 #태그"
+              onChange={onChangeInput}
+              defaultValue={defaultValues?.tags}
             />
           </UpperContentWrapper>
           <BottomContentWrapper>
@@ -116,12 +120,14 @@ export default function ProductRegisterUI(
                     name="latitutdeinput"
                     type="text"
                     placeholder="위도(LAT)"
+                    onChange={onChangeInput}
                   />
                   <MapIcon src="/mapicon.png"></MapIcon>
                   <Longtitude
                     name="longtitudeinput"
                     type="text"
                     placeholder="경도(LNG)"
+                    onChange={onChangeInput}
                   />
                 </RightUpperWrapper>
 
@@ -131,12 +137,14 @@ export default function ProductRegisterUI(
                     name="addrInput1"
                     type="text"
                     placeholder="주소를 입력해주세요"
+                    onChange={onChangeInput}
                   />
 
                   <AddrInput2
                     name="addrInput2"
                     type="text"
                     placeholder="상세주소를 입력해주세요"
+                    onChange={onChangeInput}
                   />
                 </AddrWrapper>
               </RightWrapper>
@@ -157,18 +165,18 @@ export default function ProductRegisterUI(
               <ButtonWrapper>
                 <Radiobutton>
                   <Button1>
-                    <RadioOn src="/radio_on.png" />
+                    {/* <RadioOn type="radio" name="radio-button" /> */}
                     사진 1
                   </Button1>
                   <Button2>
-                    <RadioOff src="/radio_off.png" /> 사진 2
+                    {/* <RadioOff type="radio" name="radio-button" /> 사진 2 */}
                   </Button2>
                 </Radiobutton>
               </ButtonWrapper>
             </PhotoWrapper>
           </BottomContentWrapper>
           <BottomWrapper>
-            <RegisterButton>등록하기</RegisterButton>
+            <RegisterButton onClick={onClickRegister}>등록하기</RegisterButton>
           </BottomWrapper>
         </ContenrCenterWrapper>
       </WholeContentWrapper>

@@ -53,6 +53,9 @@ export const Soldout = styled.div`
 export const BoardWrapper = styled.div`
   width: 1200px;
 `;
+
+export const UsedBoardList = styled.div``;
+
 export const BottomWrapper = styled.div`
   height: 55px;
 `;

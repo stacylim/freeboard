@@ -36,6 +36,7 @@ export default function ProductRegister({ defaultValues }) {
   };
 
   const onClickRegister = async () => {
+    // console.log(data)
     try {
       const result = await createUseditem({
         variables: {
@@ -43,8 +44,14 @@ export default function ProductRegister({ defaultValues }) {
             name: inputs.name,
             remarks: inputs.remarks,
             contents: inputs.contents,
-            price: inputs.price,
+            price: Number(inputs.price),
             tags: [inputs.tags],
+          },
+        },
+        context: {
+          headers: {
+            authorization:
+              "Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGJkOGE5MTYyNzA2MjAwMjkxMTA4MmYiLCJwZXJtaXNzaW9uIjowLCJpYXQiOjE2MjM4MzY1NjIsImV4cCI6MTYyMzkyMjk2Miwic3ViIjoiYWNjZXNzVG9rZW4ifQ.USoIlR0_Kt8H1xct3zRnqNms8Bk3X9Jvt2xZvblMgDYvLCod2peISkMjMvV_WFXBE_rnIDUIrQP-Z4WdK002Yw",
           },
         },
       });

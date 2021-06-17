@@ -64,8 +64,9 @@ export default function ProductRegisterUI({
         <ContenrCenterWrapper>
           <UpperContentWrapper>
             <ProductName>상품명</ProductName>
+            {/* name= 다음에 "" 안에 넣는 값을 컨테이너의 변수값과 일치시켜줘야 값이 제대로 들어간다. */}
             <ProductNameInput
-              name="productNameinput"
+              name="name"
               type="text"
               placeholder="상품명을 작성해주세요."
               onChange={onChangeInput}
@@ -73,7 +74,7 @@ export default function ProductRegisterUI({
             />
             <Summary>한줄요약</Summary>
             <SummaryInput
-              name="summaryinput"
+              name="remarks"
               type="text"
               placeholder="한줄요약을 작성해주세요."
               onChange={onChangeInput}
@@ -82,7 +83,7 @@ export default function ProductRegisterUI({
             <ProductDetail>상품설명</ProductDetail>
             <SummaryTool>Tools</SummaryTool>
             <ProductDetailInput
-              name="productdetailinput"
+              name="contents"
               type="text"
               placeholder="상품설명을 작성해주세요."
               onChange={onChangeInput}
@@ -91,8 +92,8 @@ export default function ProductRegisterUI({
 
             <Price>판매 가격</Price>
             <PriceInput
-              name="priceinput"
-              type="text"
+              name="price"
+              type="number"
               placeholder="판매가격을 작성해주세요."
               onChange={onChangeInput}
               defaultValue={defaultValues?.price}
@@ -100,7 +101,7 @@ export default function ProductRegisterUI({
 
             <Tag>태그입력</Tag>
             <TagInput
-              name="taginput"
+              name="tags"
               type="text"
               placeholder="#태그 #태그 #태그"
               onChange={onChangeInput}

@@ -43,7 +43,6 @@ export default function ProductSellerUI({
   onClickList,
   isActive,
   // onClickLike,
-  // onClickDislike,
 }) {
   return (
     <EditWholeWrapper>
@@ -75,7 +74,7 @@ export default function ProductSellerUI({
 
               <HeartWrapper>
                 <Heart src="/Heart.png"></Heart>
-                <HeartCount>20</HeartCount>
+                <HeartCount>{data?.fetchBoard?.likeCount}</HeartCount>
               </HeartWrapper>
             </UpperContent>
 

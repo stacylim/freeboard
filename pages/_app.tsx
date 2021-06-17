@@ -43,9 +43,12 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Head></Head>
-      //글로벌컨텍스트로 묶어주면, 그 안에 있는 모든 컴포넌트에서 글로벌
-      컨텍스트에 선언되어 있는 값에 접근할 수 있다.
+      {/* <Head>
+
+
+      </Head> */}
+      {/* //글로벌컨텍스트로 묶어주면, 그 안에 있는 모든 컴포넌트에서 글로벌
+      컨텍스트에 선언되어 있는 값에 접근할 수 있다. */}
       <GlobalContext.Provider value={{ accessToken, setAccessToken }}>
         <ApolloProvider client={client}>
           {/* <div> */}

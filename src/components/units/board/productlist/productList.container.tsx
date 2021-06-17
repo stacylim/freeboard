@@ -19,11 +19,17 @@ const ProductList = () => {
     refetch({ search: search });
   };
 
+  const saveSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
   return (
     <ProductListUI
       data={data}
-      // saveSearch={saveSearch}
+      saveSearch={saveSearch}
       onClickSearchBox={onClickSearchBox}
+      // onClickSale={onClickSale}
+      // onClickSoldout={onClickSoldout}
     />
   );
 };

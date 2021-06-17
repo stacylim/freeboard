@@ -18,7 +18,8 @@ export const UpperBoxWrapper = styled.div`
 `;
 
 export const BestBox = styled.div`
-  height: 400px;
+  width: 282px;
+  height: 391px;
 `;
 
 export const Img = styled.img`
@@ -26,8 +27,27 @@ export const Img = styled.img`
   width: 242px;
 `;
 
-export const Name = styled.div`
+export const UsedBoxList = styled.div`
+  width: 100%;
+  height: 240px;
+`;
+
+export const ListImg = styled.div`
+  width: 180px;
+  height: 180px;
+`;
+export const ProductInfo = styled.div`
+  width: 920px;
   height: 400px;
+  display: grid;
+  grid-template-rows: 25% 20% 25% auto;
+`;
+export const ProductPrice = styled.div`
+  width: 120px;
+`;
+
+export const Name = styled.div`
+  height: 36px;
 `;
 
 export const BoxBottomWrapper = styled.div`
@@ -35,7 +55,34 @@ export const BoxBottomWrapper = styled.div`
 `;
 
 export const Remarks = styled.div`
-  height: 70px;
+  height: 24px;
+  color: #4f4f4f;
+`;
+
+export const Tags = styled.div`
+  height: 24px;
+  color: #bdbdbd;
+`;
+
+export const ProfileWrap = styled.div`
+  height: 24px;
+  width: 100%;
+`;
+
+export const Profile = styled.img`
+  height: 20px;
+  width: 20px;
+`;
+
+export const Seller = styled.img`
+  height: 24px;
+  width: 45px;
+  color: #4f4f4f;
+`;
+
+export const Heart = styled.img`
+  width: 20px;
+  height: 18.35px;
 `;
 
 export const Price = styled.div`
@@ -43,11 +90,7 @@ export const Price = styled.div`
 `;
 
 export const HeartWrapper = styled.div`
-  height: 70px;
-`;
-
-export const Heart = styled.img`
-  height: 70px;
+  height: 50px;
 `;
 
 export const Count = styled.div`
@@ -87,8 +130,33 @@ export const Soldout = styled.div`
   border: none;
 `;
 
+export const SearchWrapper = styled.div`
+  width: 100%;
+  height: 52px;
+`;
+
+export const SearchInputImgWrapper = styled.div`
+  width: 100%;
+  height: 52px;
+`;
+
+export const SearchImg = styled.img`
+  width: 17.5px;
+  height: 17.5px;
+`;
+
+export const SearchInput = styled.img`
+  width: 150px;
+  height: 30px;
+`;
+
 export const BoardWrapper = styled.div`
   width: 1200px;
+`;
+
+export const SearchInputWrapper = styled.div`
+  width: 282px;
+  height: 52px;
 `;
 
 export const UsedBoardList = styled.div``;

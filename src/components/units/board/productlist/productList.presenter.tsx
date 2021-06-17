@@ -14,13 +14,35 @@ import {
   BottomWrapper,
   ProductRegister,
   UsedBoardList,
+  BestBox,
+  BoxBottomWrapper,
+  Heart,
+  HeartWrapper,
+  Img,
+  Name,
+  Price,
+  Remarks,
+  Count,
 } from "./productList.styles";
 
 export default function ProductListUI({ data, onClickSearchBox }) {
   return (
     <MainWrapper>
       <MainTitle>베스트 상품</MainTitle>
-      <UpperBoxWrapper></UpperBoxWrapper>
+      <UpperBoxWrapper>
+        <BestBox>
+          <Img></Img>
+          <Name></Name>
+          <BoxBottomWrapper>
+            <Remarks></Remarks>
+            <Price></Price>
+            <HeartWrapper>
+              <Heart></Heart>
+              <Count>20</Count>
+            </HeartWrapper>
+          </BoxBottomWrapper>
+        </BestBox>
+      </UpperBoxWrapper>
 
       <MiddleWrapper>
         <Selling>판매중상품</Selling>

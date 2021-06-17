@@ -17,6 +17,43 @@ export const UpperBoxWrapper = styled.div`
   height: 400px;
 `;
 
+export const BestBox = styled.div`
+  height: 400px;
+`;
+
+export const Img = styled.img`
+  height: 242px;
+  width: 242px;
+`;
+
+export const Name = styled.div`
+  height: 400px;
+`;
+
+export const BoxBottomWrapper = styled.div`
+  height: 70px;
+`;
+
+export const Remarks = styled.div`
+  height: 70px;
+`;
+
+export const Price = styled.div`
+  height: 70px;
+`;
+
+export const HeartWrapper = styled.div`
+  height: 70px;
+`;
+
+export const Heart = styled.img`
+  height: 70px;
+`;
+
+export const Count = styled.div`
+  height: 70px;
+`;
+
 export const MiddleWrapper = styled.div`
   height: 70px;
 `;

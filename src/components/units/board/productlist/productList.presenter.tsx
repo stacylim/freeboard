@@ -47,6 +47,7 @@ export default function ProductListUI({ data, onClickSearchBox, saveSearch }) {
       <BestBox></BestBox>
       <BestBox></BestBox>
     </UpperBoxWrapper>
+
     {data.map((el, key) => {
       return (
         <UpperBoxWrapper key={key}>
@@ -116,7 +117,7 @@ export default function ProductListUI({ data, onClickSearchBox, saveSearch }) {
           <Remarks></Remarks>
           <Tags></Tags>
           <ProfileWrap>
-            <Profile src="/profile.png"></Profile>
+            <Profile src="/Profilephoto.png"></Profile>
             <Seller></Seller>
             <Heart src="/Heart.png"></Heart>
             <Count></Count>
@@ -124,17 +125,27 @@ export default function ProductListUI({ data, onClickSearchBox, saveSearch }) {
         </ProductInfo>
         <ProductPrice></ProductPrice>
       </UsedBoxList>
+
+      {/* <InfiniteScroll loadMore={loadMore} hasMore={true}>
+          {data?.fetchBoardComments?.map((data) => (
+            <BoardCommentUIItem
+              data={data}
+              starArr={starArr}
+            ></BoardCommentUIItem>
+          ))}
+        </InfiniteScroll> */}
       {data.map((el, key) => {
         return (
           <UsedBoardList key={key} style={{ color: "#ababab" }}>
             <ListImg></ListImg>
             <ProductInfo>
-              <div> {el.name} </div>
-              <div> {el.remarks} </div>
-              <div> {el.contents} </div>
-              <div>{el.tags}</div>
-              <div>{el.seller}</div>
-              <div>{el.heart}</div>
+              <Name> {el.name} </Name>
+              <Remarks> {el.remarks} </Remarks>
+              <Tags>{el.tags}</Tags>
+              <ProfileWrap>
+                <Seller>{el.seller}</Seller>
+                <Heart>{el.heart}</Heart>
+              </ProfileWrap>
             </ProductInfo>
             <ProductPrice>{el.price}</ProductPrice>
 

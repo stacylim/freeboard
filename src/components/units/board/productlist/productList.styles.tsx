@@ -20,6 +20,7 @@ export const UpperBoxWrapper = styled.div`
 export const BestBox = styled.div`
   width: 282px;
   height: 391px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 export const Img = styled.img`
@@ -67,6 +68,8 @@ export const Tags = styled.div`
 export const ProfileWrap = styled.div`
   height: 24px;
   width: 100%;
+  display: grid;
+  grid-template-columns: 20% 40% 20% 20%;
 `;
 
 export const Profile = styled.img`

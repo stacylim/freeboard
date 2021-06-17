@@ -13,15 +13,15 @@ export const FETCH_USED_ITEMS_OF_THE_BEST = gql`
   }
 `;
 
-// export const FETCH_BOARD_COMMENT = gql`
-//   query fetchBoardComments($boardId: ID!) {
-//     fetchBoardComments(boardId: $boardId) {
-//       _id
-//       writer
-//       contents
-//       rating
-//       createdAt
-//       updatedAt
-//     }
-//   }
-// `;
+export const FETCH_USED_ITEMS = gql`
+  query fetchUseditems($search: String, $page: Int) {
+    fetchUseditems(search: $search, page: $page) {
+      _id
+      name
+      remarks
+      contents
+      price
+      tags
+    }
+  }
+`;

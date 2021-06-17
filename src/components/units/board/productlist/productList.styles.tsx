@@ -148,7 +148,7 @@ export const SearchImg = styled.img`
   height: 17.5px;
 `;
 
-export const SearchInput = styled.img`
+export const SearchInput = styled.input`
   width: 150px;
   height: 30px;
 `;

@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const EDIT_BOARD = gql`
+export const UPDATE_BOARD = gql`
   mutation updateBoard($updateBoardInput: UpdateBoardInput!) {
     updateBoard(updateBoardInput: $updateBoardInput) {
       title

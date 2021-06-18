@@ -132,8 +132,8 @@ export default function ProductListUI({
                   </ProfileWrap>
                 </ProductInfo>
                 <ListProductPrice>{data.price}원</ListProductPrice>
-                <BottomLine src="/greyline.png"></BottomLine>
               </UsedBoxList>
+              <BottomLine></BottomLine>
             </BoardWrapper>
           );
         })}

@@ -41,6 +41,7 @@ export const Img = styled.img`
 
 export const UsedBoxList = styled.div`
   width: 100%;
+
   display: grid;
   grid-template-columns: 15% auto 15%;
 
@@ -72,8 +73,9 @@ export const ListProfile = styled.img`
   height: 20px;
 `;
 
-export const BottomLine = styled.img`
-  width: 1200px;
+export const BottomLine = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #bdbdbd;
 `;
 
 export const ListSeller = styled.div`

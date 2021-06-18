@@ -16,11 +16,11 @@ import {
 
 export default function ProductCommentUI({
   data,
-  // onClickRegister,
+  onClickAsk,
   // starArr,
   // saveRating,
-  // inputs,
-  // onChangeInput,
+  inputs,
+  onChangeInput,
   // loadMore,
 }) {
   return (
@@ -43,7 +43,7 @@ export default function ProductCommentUI({
         <CountingRegisterWrapper>
           <CountingWrapper>
             <ReplyCounting>0/100</ReplyCounting>
-            <Ask>문의하기</Ask>
+            <Ask onClick={onClickAsk}>문의하기</Ask>
           </CountingWrapper>
           {/* <ReplyRegister onClick={onClickRegister}>등록하기</ReplyRegister> */}
         </CountingRegisterWrapper>

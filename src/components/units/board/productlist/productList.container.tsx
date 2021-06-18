@@ -33,14 +33,14 @@ const ProductList = () => {
   };
 
   const loadMore = () => {
-    console.log(data?.length);
-    if (data?.fetchUseditems?.length % 10 !== 0) {
+    console.log(useddata?.fetchUseditems.length);
+    if (useddata?.fetchUseditems?.length % 10 !== 0) {
       return;
     }
     fetchMore({
       //page값을 여기서 추가해줬는데, 위의 fetchMore useQuery에서는 페이지값이 없어서서 오류가 낫었다.
       //useQuery variables 안에 페이지값을 추가+ 페이지 스테이트값을 추가함에 따라 오류 해결
-      variables: { page: Math.floor(data?.fetchUseditems.length / 10) + 1 },
+      variables: { page: Math.floor(useddata?.fetchUseditems.length / 10) + 1 },
       updateQuery: (prev, { fetchMoreResult }) => ({
         // fetchMore로 데이터를 받아온 후 작업을 해주세요. <div className=""></div>
         fetchUseditems: [

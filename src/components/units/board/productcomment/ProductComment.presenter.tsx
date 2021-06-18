@@ -14,17 +14,15 @@ import {
   CountingWrapper,
 } from "./ProductComment.styles";
 
-export default function ProductCommentUI(
-  {
-    // data,
-    // onClickRegister,
-    // starArr,
-    // saveRating,
-    // inputs,
-    // onChangeInput,
-    // loadMore,
-  }
-) {
+export default function ProductCommentUI({
+  data,
+  // onClickRegister,
+  // starArr,
+  // saveRating,
+  // inputs,
+  // onChangeInput,
+  // loadMore,
+}) {
   return (
     <>
       <ReplyWholeWrapper>
@@ -50,14 +48,9 @@ export default function ProductCommentUI(
           {/* <ReplyRegister onClick={onClickRegister}>등록하기</ReplyRegister> */}
         </CountingRegisterWrapper>
 
-        {/* <InfiniteScroll loadMore={loadMore} hasMore={true}>
-          {data?.fetchBoardComments?.map((data) => (
-            <BoardCommentUIItem
-              data={data}
-              starArr={starArr}
-            ></BoardCommentUIItem>
-          ))}
-        </InfiniteScroll> */}
+        {data?.createUseditemQuestion?.map((data) => {
+          return (data = { data });
+        })}
       </ReplyWholeWrapper>
     </>
   );

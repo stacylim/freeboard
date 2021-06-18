@@ -37,14 +37,29 @@ import {
   SearchWrapper,
   SearchInput,
   SearchInputWrapper,
+  InfoBox,
+  UpperLine,
+  ListName,
+  ListRemarks,
+  ListTags,
+  ListProfile,
+  ListSeller,
+  ListHeart,
+  ListCount,
+  ListProductPrice,
+  ListWrapper,
+  MiddleOutter,
+  BottomLine,
 } from "./productList.styles";
 
 export default function ProductListUI({
   data,
+  useddata,
   onClickSearchBox,
   saveSearch,
   loadMore,
   hasMore,
+  onClickRegister,
 }) {
   return (
     <MainWrapper>
@@ -56,8 +71,10 @@ export default function ProductListUI({
               <Img src="/galaxyAmain.png"></Img>
               <Name>{data.name}</Name>
               <BoxBottomWrapper>
-                <Remarks>{data.remarks}</Remarks>
-                <Price>{data.price}</Price>
+                <InfoBox>
+                  <Remarks>{data.remarks}</Remarks>
+                  <Price>{data.price}</Price>
+                </InfoBox>
                 <HeartWrapper>
                   <Heart src="/Heart.png"></Heart>
                   <Count>20</Count>
@@ -67,55 +84,65 @@ export default function ProductListUI({
           );
         })}
       </UpperBoxWrapper>
+      <MiddleOutter>
+        <MiddleWrapper>
+          <ListWrapper>
+            <Selling>판매중상품</Selling>
+            <Soldout>판매된상품</Soldout>
+          </ListWrapper>
+          <ProductSearchWrapper>
+            <SearchWrapper>
+              <SearchInputImgWrapper>
+                <SearchInputWrapper>
+                  <SearchImg src="/searchimg.png"></SearchImg>
 
-      <MiddleWrapper>
-        <Selling>판매중상품</Selling>
-        <Soldout>판매된상품</Soldout>
-        <ProductSearchWrapper>
-          <SearchWrapper>
-            <SearchInputImgWrapper>
-              <SearchImg src="/searchimg.png"></SearchImg>
-              <SearchInputWrapper>
-                <SearchInput
-                  name="search"
-                  type="text"
-                  placeholder="제품을 검색해주세요."
-                  onChange={saveSearch}
-                />
-                {/* 인풋에있는 글자가 변경됐을때 세이브서치라는 함수를 실행 */}
-              </SearchInputWrapper>
-            </SearchInputImgWrapper>
-          </SearchWrapper>
-        </ProductSearchWrapper>
+                  <SearchInput
+                    name="search"
+                    type="text"
+                    placeholder="제품을 검색해주세요."
+                    onChange={saveSearch}
+                  />
+                  {/* 인풋에있는 글자가 변경됐을때 세이브서치라는 함수를 실행 */}
+                </SearchInputWrapper>
+              </SearchInputImgWrapper>
+            </SearchWrapper>
+          </ProductSearchWrapper>
 
-        <Calendar></Calendar>
-        <SearchButton onClick={onClickSearchBox}>검색</SearchButton>
-      </MiddleWrapper>
+          <Calendar>YYYY/MM/DD ~ YYYY/MM/DD</Calendar>
+          <SearchButton onClick={onClickSearchBox}>검색</SearchButton>
+        </MiddleWrapper>
+      </MiddleOutter>
+      <UpperLine src="/greyline.png"></UpperLine>
 
-      <BoardWrapper>
-        <UsedBoxList>
-          <ListImg></ListImg>
-          <ProductInfo>
-            <Name></Name>
-            <Remarks></Remarks>
-            <Tags></Tags>
-            <ProfileWrap>
-              <Profile src="/Profilephoto.png"></Profile>
-              <Seller></Seller>
-              <Heart src="/Heart.png"></Heart>
-              <Count></Count>
-            </ProfileWrap>
-          </ProductInfo>
-          <ProductPrice></ProductPrice>
-        </UsedBoxList>
-
-        <InfiniteScroll loadMore={loadMore} hasMore={true}>
-          {/* 여기에 맵으로 넣기  */}
-        </InfiniteScroll>
-      </BoardWrapper>
+      <InfiniteScroll loadMore={loadMore} hasMore={true}>
+        {useddata?.fetchUseditems?.map((data, key) => {
+          return (
+            <BoardWrapper>
+              <UsedBoxList key={key}>
+                <ListImg src="/galaxyAmain.png"></ListImg>
+                <ProductInfo>
+                  <ListName>{data.name}</ListName>
+                  <ListRemarks>{data.remarks}</ListRemarks>
+                  <ListTags>{data.tags}</ListTags>
+                  <ProfileWrap>
+                    <ListProfile src="/profilelist.png"></ListProfile>
+                    <ListSeller>판매자</ListSeller>
+                    <ListHeart src="/Heart.png"></ListHeart>
+                    <ListCount>20</ListCount>
+                  </ProfileWrap>
+                </ProductInfo>
+                <ListProductPrice>{data.price}원</ListProductPrice>
+                <BottomLine src="/greyline.png"></BottomLine>
+              </UsedBoxList>
+            </BoardWrapper>
+          );
+        })}
+      </InfiniteScroll>
 
       <BottomWrapper>
-        <ProductRegister>상품 등록하기</ProductRegister>
+        <ProductRegister onClick={onClickRegister}>
+          상품 등록하기
+        </ProductRegister>
       </BottomWrapper>
     </MainWrapper>
   );

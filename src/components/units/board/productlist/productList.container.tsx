@@ -11,6 +11,7 @@ const ProductList = () => {
   const client = useApolloClient();
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
+  const router = useRouter();
 
   const { data, loading, refetch } = useQuery(FETCH_USED_ITEMS_OF_THE_BEST);
   //위의 데이터와  이름이 충돌나서 :을 넣고 이름을 변경해준 것
@@ -25,6 +26,10 @@ const ProductList = () => {
 
   const saveSearch = (event) => {
     setSearch(event.target.value);
+  };
+
+  const onClickRegiter = (event) => {
+    router.push(`/Boards/product`);
   };
 
   const loadMore = () => {
@@ -47,13 +52,16 @@ const ProductList = () => {
     });
   };
 
+  console.log(data);
   return (
     <ProductListUI
       data={data}
+      useddata={useddata}
       saveSearch={saveSearch}
       onClickSearchBox={onClickSearchBox}
       loadMore={loadMore}
       hasMore={true}
+      onClickRegister={onClickRegiter}
       // onClickSale={onClickSale}
       // onClickSoldout={onClickSoldout}
     />

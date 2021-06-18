@@ -33,6 +33,27 @@ export const CREATE_BOARD_COMMENT = gql`
   }
 `;
 
+export const CREATE_USED_ITEM_QUESTION = gql`
+  mutation createUseditemQuestion(
+    $createUseditemQuestionInput: CreateUseditemQuestionInput!!
+    $useditemId: ID!
+  ) {
+    CreateUseditemQuestionInput(
+      createUseditemQuestionInput: $createUseditemQuestionInput
+      useditemId: $useditemId
+    ) {
+      _id
+      writer
+      contents
+      rating
+      user
+      createdAt
+      updatedAt
+      deletedAt
+    }
+  }
+`;
+
 export const DELETE_BOARD_COMMENT = gql`
   mutation deleteBoardComment($password: String, $boardCommentId: ID!) {
     deleteBoardComment(password: $password, boardCommentId: $boardCommentId)

@@ -43,9 +43,9 @@ export const CREATE_USED_ITEM_QUESTION = gql`
       useditemId: $useditemId
     ) {
       _id
-      writer
+
       contents
-      rating
+      useditem
       user
       createdAt
       updatedAt

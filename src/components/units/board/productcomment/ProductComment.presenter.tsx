@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import ProductCommentUIItem from "./ProductComment.presenterItem";
 import InfiniteScroll from "react-infinite-scroller";
 // import BoardCommentUIItem from "./BoardComment.presenterItem";
 import {
@@ -17,11 +18,9 @@ import {
 export default function ProductCommentUI({
   data,
   onClickAsk,
-  // starArr,
-  // saveRating,
+
   inputs,
   onChangeInput,
-  // loadMore,
 }) {
   return (
     <>
@@ -49,7 +48,7 @@ export default function ProductCommentUI({
         </CountingRegisterWrapper>
 
         {data?.createUseditemQuestion?.map((data) => {
-          return (data = { data });
+          <ProductCommentUIItem data={data}></ProductCommentUIItem>;
         })}
       </ReplyWholeWrapper>
     </>

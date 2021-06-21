@@ -6,10 +6,8 @@ import {
 import { useRouter } from "next/router";
 import { fallbackHttpConfig, useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
-import { CREATE_BOARD_COMMENT } from "./ProductComment.queries";
+
 import { useState } from "react";
-import { UPDATE_BOARD_COMMENT } from "./ProductComment.queries";
-import { DELETE_BOARD_COMMENT } from "./ProductComment.queries";
 
 // TODO 1. 게시글 상세보기 밑에 댓글 컴포넌트 달기
 // TODO 2. 댓글 작성한 내용을 담을 수 있는 State만들기 / 내용, 작성자 등이 들어갈 듯
@@ -38,7 +36,7 @@ export default function ProductComment() {
 
   const router = useRouter();
   const [page, setPage] = useState(1);
-  const { data } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
+  const { data: useddata, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: { page: page, useditemId: String(router.query.id) },
   });
 
@@ -83,11 +81,8 @@ export default function ProductComment() {
     <ProductCommentUI
       data={data}
       onClickAsk={onClickAsk}
-      // starArr={starArr}
-      // saveRating={saveRating}
       inputs={inputs}
       onChangeInput={onChangeInput}
-      // loadMore={loadMore}
     />
   );
 }

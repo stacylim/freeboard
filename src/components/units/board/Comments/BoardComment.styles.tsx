@@ -1,13 +1,9 @@
 import styled from "@emotion/styled";
 
 export const ReplyWholeWrapper = styled.div`
-  /* width: 1200px; */
-
   display: grid;
-
   justify-content: center;
   align-content: center;
-
   padding-left: 30px;
 `;
 export const ReplyUpperWrapper = styled.div`

@@ -1,13 +1,12 @@
 import ProductCommentUI from "./ProductComment.presenter";
+import { useRouter } from "next/router";
+import { useQuery, useMutation } from "@apollo/client";
+import { useState } from "react";
+
 import {
   CREATE_USED_ITEM_QUESTION,
   FETCH_USED_ITEM_QUESTIONS,
 } from "./ProductComment.queries";
-import { useRouter } from "next/router";
-import { fallbackHttpConfig, useQuery } from "@apollo/client";
-import { useMutation } from "@apollo/client";
-
-import { useState } from "react";
 
 // TODO 1. 게시글 상세보기 밑에 댓글 컴포넌트 달기
 // TODO 2. 댓글 작성한 내용을 담을 수 있는 State만들기 / 내용, 작성자 등이 들어갈 듯
@@ -16,16 +15,6 @@ import { useState } from "react";
 
 // TODO 5. 게시글 댓글 불러오는 Query 만들기
 // TODO 6. 받아온 댓글 데이터 화면에 뿌려주기
-
-const inputsInit = {
-  //요청하는 정보를 넣는 곳이므로 argument, typedetails에서만 가능
-
-  contents: "",
-};
-
-// export default function ProductComment() {
-//   return <ProductCommentUI />;
-// }
 
 export default function ProductComment() {
   const [inputs, setInputs] = useState({
@@ -56,10 +45,8 @@ export default function ProductComment() {
         variables: {
           createUseditemQuestion: {
             name: inputs.name,
-
             contents: inputs.contents,
           },
-
           boardId: String(router.query.id),
         },
         //아폴로독스설명서를 봐야함

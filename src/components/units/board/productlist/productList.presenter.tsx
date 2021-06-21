@@ -144,6 +144,8 @@ export default function ProductListUI({
           상품 등록하기
         </ProductRegister>
       </BottomWrapper>
+
+      
     </MainWrapper>
   );
 }

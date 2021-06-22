@@ -18,22 +18,21 @@ import {
 
 // import {} from "./Header.styles";
 
-export default function HeaderUI(
-  {
-    // data,
-    // boardCount,
-    // saveSearch,
-    // onClickSearchBox,
-    // onClickPage1,
-  }
-) {
+export default function HeaderUI({
+  router,
+  // data,
+  // boardCount,
+  // saveSearch,
+  // onClickSearchBox,
+  // onClickPage1,
+}) {
   return (
     <div>
       <LogoHeaderWrapper>
         <LogoWholeWrapper src="/codecamplogo.png"></LogoWholeWrapper>
 
         <LoginJoinWrapper>
-          <Login>로그인</Login>
+          <Login onClick={() => router.push("/login")}>로그인</Login>
           <JoinMember>회원가입</JoinMember>
         </LoginJoinWrapper>
       </LogoHeaderWrapper>

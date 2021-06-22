@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
   const [accessToken, setAccessToken] = useState("");
   //로그인에 필요한 사항 AccessToken을 전송하기위한 기본적인 설정
   const uploadLink = createUploadLink({
-    uri: "http://backend.codebootcamp.co.kr/graphql",
+    uri: "https://backend.codebootcamp.co.kr/graphql",
     headers: { authorization: `Bearer ${accessToken}` },
     cridential: "includes",
   });

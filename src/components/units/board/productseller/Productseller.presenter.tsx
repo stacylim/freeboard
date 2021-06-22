@@ -1,6 +1,6 @@
 import { List } from "@material-ui/core";
 import React from "react";
-
+import ProductComment from "../productcomment/ProductComment.container";
 import {
   EditWholeWrapper,
   ProductName,
@@ -102,6 +102,8 @@ export default function ProductSellerUI({
         </ContenrCenterWrapper>
       </WholeContentWrapper>
       <div> </div>
+
+      <ProductComment />
     </EditWholeWrapper>
   );
 }

@@ -1,7 +1,9 @@
 import HeaderUI from "./Headers.presenter";
 
+import { useRouter } from "next/router";
 const Header = () => {
-  return <HeaderUI />;
+  const router = useRouter();
+  return <HeaderUI router={router} />;
 };
 
 export default Header;

@@ -62,6 +62,7 @@ export default function ProductComment() {
     }
   };
 
+  console.log(data);
   return (
     <ProductCommentUI
       data={data}

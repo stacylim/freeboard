@@ -3,7 +3,6 @@ import { useQuery, useApolloClient } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { FETCH_USEDITEM } from "./Productseller.queries";
-import ProductComment from "../productcomment/ProductComment.container";
 
 export default function ProductSeller() {
   const [isActive, setIsActive] = useState(false);
@@ -47,8 +46,6 @@ export default function ProductSeller() {
         onClickEdit={onClickEdit}
         // onClickLike={onClickLike}
       />
-
-      <ProductComment />
     </>
   );
 }

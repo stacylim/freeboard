@@ -3,9 +3,11 @@ import styled from "@emotion/styled";
 export const ReplyWholeWrapper = styled.div`
   /* width: 1200px; */
   display: grid;
-  justify-content: center;
-  align-content: center;
-  padding-left: 30px;
+  /* justify-content: center;
+  align-content: center; */
+
+  width: 100%;
+  height: 100%;
 `;
 
 export const ReplyImageWrapper = styled.div`
@@ -26,14 +28,14 @@ export const ReplyImage = styled.img`
 `;
 
 export const ReplyContentWrapper = styled.div`
-  width: 1200px;
+  width: 100%;
   border: 1px, solid#BDBDBD;
   color: gray;
   margin-top: 20px;
 `;
 
 export const ReplyContent = styled.input`
-  width: 1200px;
+  width: 100%;
   height: 161px;
   border: 1px, solid #bdbdbd;
   color: #bdbdbd;
@@ -47,7 +49,7 @@ export const Ask = styled.button`
   background-color: black;
   color: white;
   font-size: 16px;
-  margin-left: 1010px;
+  /* margin-left: 1010px; */
 `;
 
 export const CountingWrapper = styled.div`
@@ -59,7 +61,7 @@ export const CountingWrapper = styled.div`
 `;
 
 export const CountingRegisterWrapper = styled.div`
-  width: 1200px;
+  /* width: 1200px; */
   border: 1px solid #bdbdbd;
   display: flex;
   flex-direction: row;
@@ -318,4 +320,42 @@ export const EditReplyContent = styled.input`
   color: gray;
   display: flex;
   justify-content: top;
+`;
+
+export const ProfilePhoto = styled.input`
+  width: 40px;
+  height: 40px;
+`;
+
+export const ProfileName = styled.input`
+  width: 44px;
+  height: 24px;
+  font-size: 16px;
+`;
+export const CommentBoxWrapper = styled.input`
+  width: 100%;
+  height: 25px;
+  display: flex;
+`;
+export const EditBox = styled.input`
+  width: 60px;
+  height: 15px;
+`;
+export const Pencil = styled.input`
+  width: 14px;
+  height: 14px;
+`;
+
+export const Xmark = styled.input`
+  width: 14px;
+  height: 14px;
+`;
+export const Commentcontents = styled.input`
+  color: #4f4f4f;
+  font-size: 16px;
+`;
+
+export const CommentDate = styled.input`
+  color: #bdbdbd;
+  margin-top: 5px;
 `;

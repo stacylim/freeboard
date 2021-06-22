@@ -5,9 +5,6 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
     fetchUseditemQuestions(page: $page, useditemId: $useditemId) {
       _id
       contents
-      rating
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -17,17 +14,15 @@ export const CREATE_USED_ITEM_QUESTION = gql`
     $createUseditemQuestionInput: CreateUseditemQuestionInput!
     $useditemId: ID!
   ) {
-    CreateUseditemQuestionInput(
+    createUseditemQuestion(
       createUseditemQuestionInput: $createUseditemQuestionInput
       useditemId: $useditemId
     ) {
       _id
       contents
-      useditem
-      user
-      createdAt
-      updatedAt
-      deletedAt
+      useditem {
+        _id
+      }
     }
   }
 `;

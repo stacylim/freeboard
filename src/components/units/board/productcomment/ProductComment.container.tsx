@@ -1,6 +1,6 @@
 import ProductCommentUI from "./ProductComment.presenter";
 import { useRouter } from "next/router";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery, useMutation, useApolloClient } from "@apollo/client";
 import { useState } from "react";
 
 import {
@@ -18,20 +18,18 @@ import {
 
 export default function ProductComment() {
   const [inputs, setInputs] = useState({
-    name: "",
     contents: "",
   });
+
   const [createUseditemQuestion] = useMutation(CREATE_USED_ITEM_QUESTION);
 
   const router = useRouter();
   const [page, setPage] = useState(1);
-  const { data: useddata, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
+  const { data, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: { page: page, useditemId: String(router.query.id) },
   });
+  console.log(data);
 
-  const { data } = useMutation(CREATE_USED_ITEM_QUESTION, {
-    variables: { contents: "contents", useditemId: String(router.query.id) },
-  });
   const [createUseditemQuestions] = useMutation(CREATE_USED_ITEM_QUESTION);
 
   const onChangeInput = (event) => {
@@ -43,11 +41,11 @@ export default function ProductComment() {
     try {
       const result = await createUseditemQuestions({
         variables: {
-          createUseditemQuestion: {
-            name: inputs.name,
+          //뒤에 쿼리문이랑 일치하는지도 백번확인해야함
+          createUseditemQuestionInput: {
             contents: inputs.contents,
           },
-          boardId: String(router.query.id),
+          useditemId: String(router.query.id),
         },
         //아폴로독스설명서를 봐야함
         refetchQueries: [

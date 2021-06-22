@@ -39,13 +39,17 @@ export default function ProductSeller() {
   // };
   console.log(data);
   return (
-    <ProductSellerUI
-      data={data}
-      isActive={isActive}
-      onClickList={onClickList}
-      onClickEdit={onClickEdit}
-      // onClickLike={onClickLike}
-    />
+    <>
+      <ProductSellerUI
+        data={data}
+        isActive={isActive}
+        onClickList={onClickList}
+        onClickEdit={onClickEdit}
+        // onClickLike={onClickLike}
+      />
+
+      <ProductComment />
+    </>
   );
 }
 // function fetchUseditemsIPicked(arg0: {

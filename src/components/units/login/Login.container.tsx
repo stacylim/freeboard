@@ -44,7 +44,7 @@ const LoginList = () => {
     setAccessToken(result.data.loginUser.accessToken);
 
     alert("로그인 되었습니다.");
-    router.push("/Boards/product");
+    router.push("/Boards/product/seller/60c9ca51d3d082002a0fed9c");
   };
 
   return <LoginListUI onChangeInput={onChangeInput} login={login} />;

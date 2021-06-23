@@ -25,10 +25,9 @@ export default function ProductComment() {
 
   const router = useRouter();
   const [page, setPage] = useState(1);
-  const { data, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
+  const { data: questions, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: { page: page, useditemId: String(router.query.id) },
   });
-  console.log(data);
 
   const [createUseditemQuestions] = useMutation(CREATE_USED_ITEM_QUESTION);
 
@@ -36,7 +35,32 @@ export default function ProductComment() {
     inputs[event.target.name] = event.target.value;
     setInputs(inputs);
   };
+  const loadMore = () => {
+    //
 
+    console.log(questions?.fetchUseditemQuestions?.length);
+    if (questions?.fetchUseditemQuestions?.length % 10 !== 0) {
+      return;
+    }
+
+    fetchMore({
+      //page값을 여기서 추가해줬는데, 위의 fetchMore useQuery에서는 페이지값이 없어서서 오류가 낫었다.
+      //useQuery variables 안에 페이지값을 추가+ 페이지 스테이트값을 추가함에 따라 오류 해결
+
+      variables: {
+        page: Math.floor(questions?.fetchUseditemQuestions?.length / 10) + 1,
+        useditemId: String(router.query.id),
+      },
+      updateQuery: (prev, { fetchMoreResult }) => ({
+        //fetchMore로 데이터를 받아온 후 작업을 해주세요. <div className=""></div>
+        fetchUseditemQuestion: [
+          ...prev.fetchUseditemQuestions,
+          ...fetchMoreResult.fetchUseditemQuestions,
+        ],
+        //배열을 연결하기위해 스프레드 ....
+      }),
+    });
+  };
   const onClickAsk = async () => {
     try {
       const result = await createUseditemQuestions({
@@ -62,13 +86,13 @@ export default function ProductComment() {
     }
   };
 
-  console.log(data);
   return (
     <ProductCommentUI
-      data={data}
+      questions={questions}
       onClickAsk={onClickAsk}
       inputs={inputs}
       onChangeInput={onChangeInput}
+      loadMore={loadMore}
     />
   );
 }

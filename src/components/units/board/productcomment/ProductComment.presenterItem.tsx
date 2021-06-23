@@ -42,6 +42,8 @@ import {
   ProfileName,
   Xmark,
   CommentBoxWrapper,
+  RestWrapper,
+  CommentWholeWrapper,
 } from "./ProductComment.styles";
 import router, { useRouter } from "next/router";
 import { common } from "@material-ui/core/colors";
@@ -65,8 +67,9 @@ const modalcustomStyles = {
 };
 
 // Modal.setAppElement("body");
+//데이터를 받을 때는 중괄호로 데이터를 한번 감싸주면, 맵으로 돌려서 하나씩 넘기는 데이터를 받을 수 있다.
 
-const ProductCommentUIItem = (data) => {
+const ProductCommentUIItem = ({ data }) => {
   console.log(data);
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
@@ -120,28 +123,32 @@ const ProductCommentUIItem = (data) => {
   {
     return (
       <div>
-        <ProfilePhoto src="/Profilephoto.png"></ProfilePhoto>
-        <CommentBoxWrapper>
-          <ProfileName>{data?.fetchUseditemQuestions.user}</ProfileName>
-          <EditBox>
-            <Pencil
-              id={data._id}
-              src="/EditImg.png"
-              onClick={onClickEdit}
-            ></Pencil>
-            <Xmark
-              id={data._id}
-              src="/DeleteImg.png"
-              onClick={onClickDelete}
-            ></Xmark>
-          </EditBox>
-        </CommentBoxWrapper>
-        <Commentcontents>
-          {data?.fetchUseditemQuestions.contents}
-        </Commentcontents>
-        <CommentDate>
-          {data?.fetchUseditemQuestions.createdAt.slice(0, 10)}
-        </CommentDate>
+        <CommentWholeWrapper>
+          <ProfileWrapper>
+            <ProfilePhoto src="/Profilephoto.png" />
+          </ProfileWrapper>
+          <RestWrapper>
+            <CommentBoxWrapper>
+              {/* 앞에서 이미 fetch로 받아왔으므로 여기서는 바로 그 다음 항목을 불러오면 된다. */}
+              <ProfileName>{data?.user.name}</ProfileName>
+              <EditBox>
+                <Pencil
+                  id={data._id}
+                  src="/EditImg.png"
+                  onClick={onClickEdit}
+                />
+                <Xmark
+                  id={data._id}
+                  src="/DeleteImg.png"
+                  onClick={onClickDelete}
+                />
+              </EditBox>
+            </CommentBoxWrapper>
+
+            <Commentcontents>{data?.contents}</Commentcontents>
+            <CommentDate>{data?.createdAt.slice(0, 10)}</CommentDate>
+          </RestWrapper>
+        </CommentWholeWrapper>
       </div>
     );
   }

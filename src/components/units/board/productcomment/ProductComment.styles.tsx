@@ -37,7 +37,8 @@ export const ReplyContentWrapper = styled.div`
 export const ReplyContent = styled.input`
   width: 100%;
   height: 161px;
-  border: 1px, solid #bdbdbd;
+  border: 1px solid #bdbdbd;
+  border-bottom: none !important;
   color: #bdbdbd;
   display: flex;
   justify-content: top;
@@ -56,8 +57,8 @@ export const CountingWrapper = styled.div`
   width: 100%;
   height: 52px;
   border: #bdbdbd;
-  display: flex;
-  flex-direction: space-between;
+  display: grid;
+  grid-template-columns: 89% 11%;
 `;
 
 export const CountingRegisterWrapper = styled.div`
@@ -262,7 +263,7 @@ export const EditReplyContentWrapper = styled.div`
   color: gray;
   padding-top: 20px;
 `;
-export const EditReplycontent = styled.input`
+export const EditReplycontent = styled.div`
   width: 1200px;
   height: 161px;
   border: 1px, solid #bdbdbd;
@@ -313,7 +314,7 @@ export const EditCountingWrapper = styled.div`
   padding-left: 5px;
 `;
 
-export const EditReplyContent = styled.input`
+export const EditReplyContent = styled.div`
   width: 1200px;
   height: 161px;
   border: 1px, solid #bdbdbd;
@@ -322,40 +323,56 @@ export const EditReplyContent = styled.input`
   justify-content: top;
 `;
 
-export const ProfilePhoto = styled.input`
+export const ProfilePhoto = styled.img`
   width: 40px;
   height: 40px;
+  margin-left: 10px;
 `;
 
-export const ProfileName = styled.input`
+export const ProfileName = styled.div`
   width: 44px;
   height: 24px;
   font-size: 16px;
 `;
-export const CommentBoxWrapper = styled.input`
+export const CommentBoxWrapper = styled.div`
   width: 100%;
   height: 25px;
-  display: flex;
+
+  display: grid;
+  grid-template-columns: 90% 10%;
 `;
-export const EditBox = styled.input`
+export const EditBox = styled.div`
   width: 60px;
   height: 15px;
 `;
-export const Pencil = styled.input`
+export const Pencil = styled.img`
   width: 14px;
   height: 14px;
 `;
 
-export const Xmark = styled.input`
+export const Xmark = styled.img`
   width: 14px;
   height: 14px;
 `;
-export const Commentcontents = styled.input`
+export const Commentcontents = styled.div`
   color: #4f4f4f;
   font-size: 16px;
 `;
 
-export const CommentDate = styled.input`
+export const CommentDate = styled.div`
   color: #bdbdbd;
   margin-top: 5px;
+  height: 12px;
+`;
+
+export const RestWrapper = styled.div``;
+
+export const CommentWholeWrapper = styled.div`
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 10% 90%;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #bdbdbd !important;
 `;

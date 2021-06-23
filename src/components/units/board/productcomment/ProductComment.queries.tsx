@@ -5,6 +5,12 @@ export const FETCH_USED_ITEM_QUESTIONS = gql`
     fetchUseditemQuestions(page: $page, useditemId: $useditemId) {
       _id
       contents
+      user {
+        _id
+        name
+        email
+      }
+      createdAt
     }
   }
 `;
@@ -46,11 +52,17 @@ export const UPDATE_USED_ITEM_QUESTION = gql`
     ) {
       _id
       contents
-      useditem
-      user
+      useditem {
+        _id
+        name
+      }
+      user {
+        _id
+        email
+        name
+      }
       createdAt
       updatedAt
-      deletedAt
     }
   }
 `;

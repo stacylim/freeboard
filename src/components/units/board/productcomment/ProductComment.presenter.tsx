@@ -16,13 +16,11 @@ import {
 } from "./ProductComment.styles";
 
 export default function ProductCommentUI({
-  data,
+  questions,
   onClickAsk,
-  onClickEdit,
-  onClickDelete,
-
   inputs,
   onChangeInput,
+  loadMore,
 }) {
   return (
     <>
@@ -50,10 +48,12 @@ export default function ProductCommentUI({
             </CountingWrapper>
             {/* <ReplyRegister onClick={onClickRegister}>등록하기</ReplyRegister> */}
           </CountingRegisterWrapper>
-
-          {data?.fetchUseditemQuestions?.map((el, key) => {
-            return <ProductCommentUIItem data={data} />;
-          })}
+          <InfiniteScroll loadMore={loadMore} hasMore={true}>
+            {questions?.fetchUseditemQuestions?.map((data, key) => {
+              console.log(data);
+              return <ProductCommentUIItem data={data} />;
+            })}
+          </InfiniteScroll>
           {/* {data?.fetchUseditemQuestions?.map((data) => {
             <div>2 </div>;
             // <ProductCommentUIItem data={data} />;

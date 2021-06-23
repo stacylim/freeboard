@@ -11,27 +11,7 @@ import {
 } from "./ProductComment.queries";
 
 import {
-  ReplyBox1,
-  Box1Content,
   ProfileWrapper,
-  Profile,
-  Box1InnerWrapper,
-  InnerCenterWrapper,
-  WriterStarWrapper,
-  WriterWrapper,
-  Writer,
-  Date,
-  RightWrapper,
-  EditIMG,
-  DeleteIMG,
-  EditReplyWriterPasswordWrapper,
-  EditReplyWriter,
-  EditReplyContentWrapper,
-  EditReplyContent,
-  EditCountingRegisterWrapper,
-  EditCountingWrapper,
-  EditReplyRegister,
-  EditReplyCounting,
   ModalInput,
   ModalButton,
   ProfilePhoto,
@@ -44,15 +24,14 @@ import {
   CommentBoxWrapper,
   RestWrapper,
   CommentWholeWrapper,
+  CommentcontentsInput,
+  CommentDateInput,
 } from "./ProductComment.styles";
 import router, { useRouter } from "next/router";
 import { common } from "@material-ui/core/colors";
 
 const inputupdateInit = {
-  writer: "",
-  password: "",
   contents: "",
-  rating: 0,
 };
 
 const modalcustomStyles = {
@@ -66,11 +45,11 @@ const modalcustomStyles = {
   },
 };
 
-// Modal.setAppElement("body");
+Modal.setAppElement("body");
 //데이터를 받을 때는 중괄호로 데이터를 한번 감싸주면, 맵으로 돌려서 하나씩 넘기는 데이터를 받을 수 있다.
 
 const ProductCommentUIItem = ({ data }) => {
-  console.log(data);
+  console.log(1);
   const router = useRouter();
   const [isEdit, setIsEdit] = useState(false);
   const [updateInit, setUpdateInit] = useState(inputupdateInit);
@@ -78,11 +57,42 @@ const ProductCommentUIItem = ({ data }) => {
   const [updateUseditemQuestion] = useMutation(UPDATE_USED_ITEM_QUESTION);
   const [deleteUseditemQuestion] = useMutation(DELETE_USED_ITEM_QUESTION);
 
-  const onClickEdit = async () => {
+  //댓글수정연필버튼 눌렀을때 상태변경
+  const onClickEdit = () => {
+    setIsEdit(true);
+  };
+
+  //삭제버튼 눌렀을때 알람창=모달창
+  const [modal, setModal] = useState(false);
+  const [page, setPage] = useState(1);
+  const onClickDelete = async () => {
+    try {
+      await deleteUseditemQuestion({
+        //Arguments에서 꼭 보내야하는 애들
+        variables: {
+          useditemQuestionId: data._id,
+        },
+        refetchQueries: [
+          {
+            query: FETCH_USED_ITEM_QUESTIONS,
+            variables: { page: page, useditemId: String(router.query.id) },
+          },
+        ],
+      });
+      alert("댓글이 삭제되었습니다.");
+      // setModal(false);
+      // console.log(result);
+    } catch (error) {
+      alert(error.message);
+      //댓글이 삭제된 시점에서 모달창이 꺼져야 하므로 모달 =false로 다시 만들어줘야한다.
+    }
+  };
+
+  const onClickUpdate = async () => {
     const result = await updateUseditemQuestion({
       //Arguments에서 꼭 보내야하는 애들
       variables: {
-        updateUseditemQuestion: {
+        updateUseditemQuestionInput: {
           contents: updateInit.contents,
         },
         useditemQuestionId: data._id,
@@ -98,59 +108,76 @@ const ProductCommentUIItem = ({ data }) => {
     });
     setIsEdit(false);
   };
-  const onClickDelete = async () => {
-    try {
-      await deleteUseditemQuestion({
-        //Arguments에서 꼭 보내야하는 애들
-        variables: {
-          useditemQuestionId: data._id,
-        },
-        refetchQueries: [
-          {
-            query: FETCH_USED_ITEM_QUESTIONS,
-            variables: { useditemId: String(router.query.id) },
-          },
-        ],
-      });
-      alert("댓글이 삭제되었습니다.");
-      // setModal(false);
-      // console.log(result);
-    } catch (error) {
-      alert(error.message);
-      //댓글이 삭제된 시점에서 모달창이 꺼져야 하므로 모달 =false로 다시 만들어줘야한다.
-    }
-  };
-  {
-    return (
-      <div>
-        <CommentWholeWrapper>
-          <ProfileWrapper>
-            <ProfilePhoto src="/Profilephoto.png" />
-          </ProfileWrapper>
-          <RestWrapper>
-            <CommentBoxWrapper>
-              {/* 앞에서 이미 fetch로 받아왔으므로 여기서는 바로 그 다음 항목을 불러오면 된다. */}
-              <ProfileName>{data?.user.name}</ProfileName>
-              <EditBox>
-                <Pencil
-                  id={data._id}
-                  src="/EditImg.png"
-                  onClick={onClickEdit}
-                />
-                <Xmark
-                  id={data._id}
-                  src="/DeleteImg.png"
-                  onClick={onClickDelete}
-                />
-              </EditBox>
-            </CommentBoxWrapper>
 
-            <Commentcontents>{data?.contents}</Commentcontents>
-            <CommentDate>{data?.createdAt.slice(0, 10)}</CommentDate>
-          </RestWrapper>
-        </CommentWholeWrapper>
-      </div>
-    );
-  }
+  const onChangeInput = (event) => {
+    setUpdateInit({
+      ...updateInit,
+      //기존updateInit을 활용하여, 데이터를 집어넣어주고, 변경되는 아이들은 밑에서 setUpdateInit으로 나온다.
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  return (
+    <>
+      <CommentWholeWrapper>
+        <ProfileWrapper>
+          <ProfilePhoto src="/Profilephoto.png" />
+        </ProfileWrapper>
+        <RestWrapper>
+          <CommentBoxWrapper>
+            {/* 앞에서 이미 fetch로 받아왔으므로 여기서는 바로 그 다음 항목을 불러오면 된다. */}
+            <ProfileName>{data?.user.name}</ProfileName>
+            <EditBox>
+              <Pencil id={data._id} src="/EditImg.png" onClick={onClickEdit} />
+              <Xmark
+                id={data._id}
+                src="/DeleteImg.png"
+                onClick={onClickDelete}
+              />
+            </EditBox>
+          </CommentBoxWrapper>
+          {isEdit && (
+            <>
+              <CommentcontentsInput
+                name="contents"
+                type="text"
+                placeholder="댓글 수정해주세요."
+                onChange={onChangeInput}
+                defaultValue={data?.contents}
+              />
+              <CommentDateInput>
+                {data?.updatedAt.slice(0, 10)}
+              </CommentDateInput>
+            </>
+          )}
+          {/*//조건부렌더링*/}
+          {!isEdit && (
+            <>
+              <Modal
+                isOpen={modal}
+                onRequestClose={() => setModal(false)}
+                //React모달 공식문서에 있으며, setModal(false)일때만 모달창이 닫힐 수 있도록 해준다.
+                //대부분 모달의 기본기능이며, 창 외 영역을 클릭해주면 화면이 닫힘.
+                //setModal()=> 보통 화살표 함수없이 함수를 실행하게 되면, 자동으로 실행이 되므로, 그것을 방지하기 위해
+                //무한 반복을 막기위해서 클릭했을때 화살표 함수가 필요하다.
+                style={modalcustomStyles}
+              >
+                <ModalInput
+                // onChange={onChange}
+                // type="password"
+                // placeholder="비밀번호"
+                ></ModalInput>
+                <ModalButton onClick={onClickDelete}>댓글삭제</ModalButton>;
+              </Modal>
+
+              <Commentcontents>{data?.contents}aaa</Commentcontents>
+              <CommentDate>{data?.createdAt.slice(0, 10)}</CommentDate>
+            </>
+          )}
+        </RestWrapper>
+      </CommentWholeWrapper>
+    </>
+  );
 };
+
 export default ProductCommentUIItem;

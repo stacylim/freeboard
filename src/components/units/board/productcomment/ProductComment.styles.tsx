@@ -348,6 +348,7 @@ export const EditBox = styled.div`
 export const Pencil = styled.img`
   width: 14px;
   height: 14px;
+  margin-right: 10px;
 `;
 
 export const Xmark = styled.img`
@@ -375,4 +376,14 @@ export const CommentWholeWrapper = styled.div`
   margin-top: 10px;
   padding-bottom: 20px;
   border-bottom: 1px solid #bdbdbd !important;
+`;
+
+export const CommentcontentsInput = styled.input`
+  width: 100%;
+  height: 24px;
+`;
+
+export const CommentDateInput = styled.input`
+  width: 100%;
+  height: 18px;
 `;

@@ -288,7 +288,7 @@ const BoardCommentUIItem = ({ data, starArr }) => {
           </ProfileWrapper>
         </ReplyBox1>
       )}
-      {/* 수정은 스테이트로 관리, 스테이트가 트루면, 수정화면 보이게 하고 false면, 지금화면 그대로 
+      {/* 수정은 스테이트로 관리, 스테이트가 트루면, 수정화면 보이게 하고 //false면 지금화면 그대로 
          //새로운 화면이 나오게끔! */}
     </>
   );

@@ -11,7 +11,7 @@ export const EditWholeWrapper = styled.div`
 export const WholeContentWrapper = styled.div`
   margin-top: 50px;
   background: #ffffff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); */
   display: grid;
   align-items: center;
   justify-content: center;

@@ -24,6 +24,8 @@ const LoginList = () => {
   const [isActive, setIsActive] = useState(false);
   // const [updateBoard] = useMutation(UPDATE_BOARD);
 
+  const [clickSignup, setClickSignup] = useState(false);
+
   const onChangeInput = (event) => {
     const newInputs = { ...inputs, [event.target.name]: event.target.value };
     setInputs(newInputs);
@@ -47,7 +49,13 @@ const LoginList = () => {
     router.push("/Boards/product/seller/60c9ca51d3d082002a0fed9c");
   };
 
-  return <LoginListUI onChangeInput={onChangeInput} login={login} />;
+  return (
+    <LoginListUI
+      onChangeInput={onChangeInput}
+      login={login}
+      clickSignup={clickSignup}
+    />
+  );
 };
 
 export default LoginList;

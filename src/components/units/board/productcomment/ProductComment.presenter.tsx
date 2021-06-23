@@ -49,10 +49,9 @@ export default function ProductCommentUI({
             {/* <ReplyRegister onClick={onClickRegister}>등록하기</ReplyRegister> */}
           </CountingRegisterWrapper>
           <InfiniteScroll loadMore={loadMore} hasMore={true}>
-            {questions?.fetchUseditemQuestions?.map((data, key) => {
-              console.log(data);
-              return <ProductCommentUIItem data={data} />;
-            })}
+            {questions?.fetchUseditemQuestions?.map((data, key) => (
+              <ProductCommentUIItem data={data} />
+            ))}
           </InfiniteScroll>
           {/* {data?.fetchUseditemQuestions?.map((data) => {
             <div>2 </div>;

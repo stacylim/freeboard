@@ -54,14 +54,13 @@ export const UPDATE_USED_ITEM_QUESTION = gql`
       contents
       useditem {
         _id
-        name
       }
       user {
         _id
         email
         name
       }
-      createdAt
+
       updatedAt
     }
   }

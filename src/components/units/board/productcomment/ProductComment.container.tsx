@@ -28,7 +28,7 @@ export default function ProductComment() {
   const { data: questions, fetchMore } = useQuery(FETCH_USED_ITEM_QUESTIONS, {
     variables: { page: page, useditemId: String(router.query.id) },
   });
-
+  console.log(questions);
   const [createUseditemQuestions] = useMutation(CREATE_USED_ITEM_QUESTION);
 
   const onChangeInput = (event) => {
@@ -53,7 +53,7 @@ export default function ProductComment() {
       },
       updateQuery: (prev, { fetchMoreResult }) => ({
         //fetchMore로 데이터를 받아온 후 작업을 해주세요. <div className=""></div>
-        fetchUseditemQuestion: [
+        fetchUseditemQuestions: [
           ...prev.fetchUseditemQuestions,
           ...fetchMoreResult.fetchUseditemQuestions,
         ],

@@ -28,15 +28,7 @@ import {
   Wrapper4,
 } from "./mypage.styles";
 
-export default function MyPageListUI({
-  data,
-  useddata,
-  onClickSearchBox,
-  saveSearch,
-  loadMore,
-  hasMore,
-  onClickRegister,
-}) {
+export default function MyPageListUI({ data }) {
   return (
     <MyPageWrapper>
       <ProfileWrapper>
@@ -70,7 +62,7 @@ export default function MyPageListUI({
           <MainBoardList style={{ fontWeight: "bold" }}>
             <div> 번호 </div>
             <div> 제목 </div>
-            <div>판매가격</div>
+            <div> 판매가격 </div>
             <div> 작성자 </div>
             <div> 날짜 </div>
           </MainBoardList>

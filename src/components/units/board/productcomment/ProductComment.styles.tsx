@@ -387,3 +387,8 @@ export const CommentDateInput = styled.input`
   width: 100%;
   height: 18px;
 `;
+
+export const ReactQuill = styled.input`
+  width: 100%;
+  height: 100%;
+`;

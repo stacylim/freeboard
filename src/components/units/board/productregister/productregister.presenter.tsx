@@ -47,13 +47,20 @@ import {
   WholeContentWrapper,
   ContenrCenterWrapper,
   AddrWrapper,
+  ReactQuill,
+  WebEditor,
 } from "./Productregister.styles";
+import "react-quill/dist/quill.snow.css";
 
 export default function ProductRegisterUI({
   isActive,
   onChangeInput,
   onClickRegister,
   defaultValues,
+  isSubmitting,
+  onChangeEditor,
+  onClickSubmit,
+  data,
 }) {
   return (
     <RegisterWholeWrapper>
@@ -81,7 +88,17 @@ export default function ProductRegisterUI({
               defaultValue={defaultValues?.remarks}
             />
             <ProductDetail>상품설명</ProductDetail>
-            <SummaryTool>Tools</SummaryTool>
+            <WebEditor>
+              <ReactQuill onChange={onChangeEditor} />
+              <button onClick={onClickSubmit} disabled={isSubmitting}>
+                등록하기{" "}
+              </button>
+              <div>{data?.fetchUsedItem.contents}</div>
+              {/* <div>
+        dangerouslySetInnerHTML = {{ __html: data?.fetchUsedItem.contents }}
+      </div> */}
+              <div>{data?.fetchUsedItem.contents}</div>
+            </WebEditor>
             <ProductDetailInput
               name="contents"
               type="text"

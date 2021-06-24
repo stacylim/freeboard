@@ -284,3 +284,12 @@ export const BottomWrapper = styled.div`
   align-content: center;
   text-align: center;
 `;
+
+export const ReactQuill = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+export const WebEditor = styled.div`
+  width: 100%;
+  height: 40px;
+`;

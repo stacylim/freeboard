@@ -307,3 +307,8 @@ export const EditReplyContent = styled.input`
   display: flex;
   justify-content: top;
 `;
+
+export const CommentUpdateButton = styled.button`
+  width: 100px;
+  height: 50px;
+`;

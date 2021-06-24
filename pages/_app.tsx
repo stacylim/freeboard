@@ -31,7 +31,11 @@ function MyApp({ Component, pageProps }) {
   //로그인에 필요한 사항 AccessToken을 전송하기위한 기본적인 설정
   const uploadLink = createUploadLink({
     uri: "https://backend.codebootcamp.co.kr/graphql",
-    headers: { authorization: `Bearer ${accessToken}` },
+    headers: {
+      authorization:
+        // `Bearer ${accessToken} ` 원래 형태
+        "Bearer eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM4NmQ1ZGFiZjNkODAwMjk3YmE2MGUiLCJwZXJtaXNzaW9uIjowLCJpYXQiOjE2MjQ1MDI0ODQsImV4cCI6MTYyNDUwNjA4NCwic3ViIjoiYWNjZXNzVG9rZW4ifQ.NjGaeXdp3KA9woAsmZquIfPRe-XIbqZsRhkLt0oHgTLLq8gESxJfdKUCVrOzqzJJMYWV0x0HC-Y-kouMoLhBAA",
+    },
     cridential: "includes",
   });
 

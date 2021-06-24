@@ -29,6 +29,7 @@ import {
 } from "./ProductComment.styles";
 import router, { useRouter } from "next/router";
 import { common } from "@material-ui/core/colors";
+import { CommentUpdateButton } from "../Comments/BoardComment.styles";
 
 const inputupdateInit = {
   contents: "",
@@ -138,16 +139,23 @@ const ProductCommentUIItem = ({ data }) => {
           </CommentBoxWrapper>
           {isEdit && (
             <>
-              <CommentcontentsInput
-                name="contents"
-                type="text"
-                placeholder="댓글 수정해주세요."
-                onChange={onChangeInput}
-                defaultValue={data?.contents}
-              />
-              <CommentDateInput>
-                {data?.updatedAt.slice(0, 10)}
-              </CommentDateInput>
+              <div>
+                <CommentcontentsInput
+                  name="contents"
+                  type="text"
+                  placeholder="댓글 수정해주세요."
+                  onChange={onChangeInput}
+                  defaultValue={data?.contents}
+                />
+                {/* <CommentDateInput> */}
+                {/* {data?.updatedAt.slice(0, 10)} */}
+                {/* </CommentDateInput> */}
+              </div>
+              <div>
+                <CommentUpdateButton onClick={onClickUpdate}>
+                  댓글수정완료
+                </CommentUpdateButton>
+              </div>
             </>
           )}
           {/*//조건부렌더링*/}

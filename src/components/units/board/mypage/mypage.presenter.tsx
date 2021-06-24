@@ -62,7 +62,7 @@ export default function MyPageListUI({
       </ProfileWrapper>
 
       <BoardWrapper>
-        {/* <RightWrapper>
+        <RightWrapper>
           <MyProduct>나의상품</MyProduct>
           <MyMap>마이 맵</MyMap>
         </RightWrapper>
@@ -76,7 +76,7 @@ export default function MyPageListUI({
           </MainBoardList>
 
           <MainBoardListDivs>
-            {data.map((el, key) => {
+            {/* {data.map((el, key) => {
               return (
                 <MainBoardList key={key} style={{ color: "#ababab" }}>
                   <div> {key + 1} </div>
@@ -86,9 +86,9 @@ export default function MyPageListUI({
                   <div> {el.createdAt.slice(0, 10)} </div>
                 </MainBoardList>
               );
-            })}
+            })} */}
           </MainBoardListDivs>
-        </MainBoderListDiv> */}
+        </MainBoderListDiv>
       </BoardWrapper>
     </MyPageWrapper>
   );

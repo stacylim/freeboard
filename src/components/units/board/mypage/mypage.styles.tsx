@@ -3,6 +3,8 @@ import styled from "@emotion/styled";
 export const MyPageWrapper = styled.div`
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 25% 75%;
 `;
 
 export const ProfileWrapper = styled.div`
@@ -59,8 +61,11 @@ export const MyPagePoint = styled.img`
   height: 20px;
 `;
 export const RightWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 25px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-content: right;
 `;
 export const Credit = styled.div`
   width: 100%;
@@ -107,7 +112,11 @@ export const MainBoderListDiv = styled.div`
 export const MainBoardList = styled.div`
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 20% 30% 15% 15% 20%;
+  border-top: 1px #000000;
 `;
+
 export const MainBoardListDivs = styled.div`
   width: 100%;
   height: 100%;

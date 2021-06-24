@@ -12,9 +12,14 @@ export const FETCH_USED_ITEMS = gql`
   }
 `;
 
-// export const FETCH_USEDITEMS_COUNT_PICKED = gql`
-//   query fetchUseditemsCountIPicked( $page: Int){
-//     fetchUseditemsCountIPicked(page: $page){
-//   }
-//   }
-// `;
+export const FETCH_USED_ITEMS_ISOLD = gql`
+  query fetchUseditemsISold($search: String, $page: Int) {
+    fetchUseditemsISold(search: $search, page: $page) {
+      _id
+      name
+      price
+      seller
+      createdAt
+    }
+  }
+`;

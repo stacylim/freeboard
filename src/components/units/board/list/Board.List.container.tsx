@@ -25,7 +25,7 @@ const BoardList = () => {
 
   const { data: boardCount, loading: boardsLoding } = useQuery(
     FETCH_BOARDS_COUNT,
-    {}
+    { variables: { page: currentPage, search: search } }
     //이 데이터를 다 불러왔을때만 사용 할 수 있게끔 설정
   );
   console.log(boardCount);

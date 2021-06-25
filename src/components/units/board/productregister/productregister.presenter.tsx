@@ -13,7 +13,7 @@ import {
   PriceInput,
   Tag,
   TagInput,
-  Mapimg,
+  Map,
   LocationWrapper,
   Location,
   RightWrapper,
@@ -47,10 +47,18 @@ import {
   WholeContentWrapper,
   ContenrCenterWrapper,
   AddrWrapper,
-  ReactQuill,
   WebEditor,
 } from "./Productregister.styles";
+
 import "react-quill/dist/quill.snow.css";
+import KakaoMap from "../../../commons/map/index";
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+  //ssr = 서버사이드 렌더링
+  //브라우저가 없는 서버환경이면, ReactQuill을 그려라 라는 뜻
+});
 
 export default function ProductRegisterUI({
   isActive,
@@ -90,14 +98,11 @@ export default function ProductRegisterUI({
             <ProductDetail>상품설명</ProductDetail>
             <WebEditor>
               <ReactQuill onChange={onChangeEditor} />
+              {/* <ReactQuill onChange={onChangeEditor} />
               <button onClick={onClickSubmit} disabled={isSubmitting}>
                 등록하기{" "}
               </button>
-              <div>{data?.fetchUsedItem.contents}</div>
-              {/* <div>
-        dangerouslySetInnerHTML = {{ __html: data?.fetchUsedItem.contents }}
-      </div> */}
-              <div>{data?.fetchUsedItem.contents}</div>
+              <div>{data?.fetchUsedItem.contents}</div> */}
             </WebEditor>
             <ProductDetailInput
               name="contents"
@@ -129,7 +134,10 @@ export default function ProductRegisterUI({
             <MapandLocationWrapper>
               <LocationWrapper>
                 <Location>거래위치</Location>
-                <Mapimg src="/mapimage.png"></Mapimg>
+                <Map>
+                  {/* @ts-ignore */}
+                  <KakaoMap />
+                </Map>
               </LocationWrapper>
               <RightWrapper>
                 <GPS>GPS</GPS>

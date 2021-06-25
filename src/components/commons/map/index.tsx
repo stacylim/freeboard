@@ -55,8 +55,8 @@ const MapPage = () => {
       <div
         id="map"
         style={{
-          width: "384px",
-          height: "252px",
+          width: "340px",
+          height: "250px",
         }}
         onClick={onClickMap}
       ></div>

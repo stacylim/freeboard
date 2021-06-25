@@ -122,12 +122,13 @@ export const BottomContentWrapper = styled.div`
   width: 100%;
 `;
 export const MapandLocationWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 45% auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding-top: 30px;
 `;
 
-export const Mapimg = styled.img`
+export const Map = styled.div`
   width: 384px;
   height: 252px;
 `;

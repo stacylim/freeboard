@@ -18,7 +18,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/units/board/productedit/Productedit.presenter.x"
+    "src/components/units/board/productedit/Productedit.presenter.x",
+    "../Distribution/pages/sign-up/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -68,7 +68,7 @@ export default function MyPageListUI({ data }) {
           </MainBoardList>
 
           <MainBoardListDivs>
-            {/* {data.map((el, key) => {
+            {data.map((el, key) => {
               return (
                 <MainBoardList key={key} style={{ color: "#ababab" }}>
                   <div> {key + 1} </div>
@@ -78,7 +78,7 @@ export default function MyPageListUI({ data }) {
                   <div> {el.createdAt.slice(0, 10)} </div>
                 </MainBoardList>
               );
-            })} */}
+            })}
           </MainBoardListDivs>
         </MainBoderListDiv>
       </BoardWrapper>

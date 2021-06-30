@@ -225,7 +225,7 @@ export default function BoardListUI({
           </MainBoardList>
 
           <MainBoardListDivs>
-            {data.map((el, key) => {
+            {data?.map((el, key) => {
               return (
                 <MainBoardList key={key} style={{ color: "#ababab" }}>
                   <div> {key + 1} </div>

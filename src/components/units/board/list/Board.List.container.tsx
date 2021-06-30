@@ -112,7 +112,7 @@ const BoardList = () => {
     // 보드로딩 조회가 완료됐을 때만 실행되게끔 해주는 것
     return (
       <BoardListUI
-        data={data.fetchBoards}
+        data={data?.fetchBoards}
         boardCount={boardCount}
         saveSearch={saveSearch}
         onClickSearchBox={onClickSearchBox}

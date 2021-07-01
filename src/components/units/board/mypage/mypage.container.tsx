@@ -10,20 +10,19 @@ const MyPageList = () => {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data, loading, refetch, fetchMore } = useQuery(
-    FETCH_USED_ITEMS_ISOLD,
-    {
-      variables: { page: currentPage, search: search },
-    }
-  );
+  const {
+    data: dataISold,
 
-  //   const { data, loading, refetch, fetchMore } = useQuery(
-  //     FETCH_USED_ITEMS_ISOLD,
-  //     {
-  //       variables: { page: currentPage, search: search },
-  //     }
-  //   );
+    refetch,
+    fetchMore,
+  } = useQuery(FETCH_USED_ITEMS_ISOLD, {
+    variables: { page: currentPage, search: search },
+  });
 
-  return <MyPageListUI />;
+  const { data, loading } = useQuery(FETCH_USED_ITEMS, {
+    variables: { page: currentPage, search: search },
+  });
+
+  return <MyPageListUI data={data} dataISold={dataISold} />;
 };
 export default MyPageList;

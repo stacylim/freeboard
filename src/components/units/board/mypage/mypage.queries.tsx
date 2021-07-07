@@ -13,13 +13,10 @@ export const FETCH_USED_ITEMS = gql`
 `;
 
 export const FETCH_USED_ITEMS_ISOLD = gql`
-  query fetchUseditemsISold($search: String, $page: Int) {
-    fetchUseditemsISold(search: $search, page: $page) {
+  query fetchUseditemsISold {
+    fetchUseditemsISold {
       _id
       name
-      price
-      seller
-      createdAt
     }
   }
 `;

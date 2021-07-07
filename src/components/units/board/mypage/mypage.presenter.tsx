@@ -30,6 +30,8 @@ import {
   TopLine,
   One,
   Wrap,
+  Title,
+  Price,
 } from "./mypage.styles";
 
 export default function MyPageProfileUI({ data, dataISold }) {
@@ -37,7 +39,7 @@ export default function MyPageProfileUI({ data, dataISold }) {
     <MyPageWrapper>
       <ProfileWrapper>
         <Wrap>
-          <MyPage>MYPAGE</MyPage>
+          <MyPage>MY PAGE</MyPage>
           <ProfileImg src="/Profilephoto.png"></ProfileImg>
           <MyPageName>{data?.name}</MyPageName>
           <Wrapper1>
@@ -75,9 +77,34 @@ export default function MyPageProfileUI({ data, dataISold }) {
             <div> 작성자 </div>
             <div> 날짜 </div>
           </MainBoardList>
+          {/* <MainBoardList>
+            <Number> 10 </Number>
+            <Title>게시물 제목입니다.</Title>
+            <Price> $2000 </Price>
+            <Date> 날짜 </Date>
+          </MainBoardList> */}
 
           <MainBoardListDivs>
-            {dataISold?.map((el, key) => {
+            {new Array(10).fill(1).map((el, key) => {
+              console.log(el);
+              return (
+                <MainBoardList
+                  key={key}
+                  style={
+                    key === 9
+                      ? { borderBottom: "solid 1px #ababab" }
+                      : undefined
+                  }
+                >
+                  <div> 1 </div>
+                  <div> 2 </div>
+                  <div> 3</div>
+                  <div> 4 </div>
+                </MainBoardList>
+              );
+            })}
+
+            {/* {dataISold?.map((el, key) => {
               return (
                 <MainBoardList key={key} style={{ color: "#ababab" }}>
                   <div> {key + 1} </div>
@@ -86,7 +113,7 @@ export default function MyPageProfileUI({ data, dataISold }) {
                   <div> {el.createdAt.slice(0, 10)} </div>
                 </MainBoardList>
               );
-            })}
+            })} */}
           </MainBoardListDivs>
         </MainBoderListDiv>
       </BoardWrapper>

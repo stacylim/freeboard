@@ -15,9 +15,8 @@ const MyPageList = () => {
 
     refetch,
     fetchMore,
-  } = useQuery(FETCH_USED_ITEMS_ISOLD, {
-    variables: { page: currentPage, search: search },
-  });
+  } = useQuery(FETCH_USED_ITEMS_ISOLD);
+  console.log(dataISold);
 
   const { data, loading } = useQuery(FETCH_USED_ITEMS, {
     variables: { page: currentPage, search: search },

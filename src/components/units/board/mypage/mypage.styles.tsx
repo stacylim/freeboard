@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const ColumnLine = styled.div`
   height: 1189px;
-
   width: 2px;
   background: #f2f2f2;
   opacity: 0.4;
@@ -12,6 +11,24 @@ export const MyPageWrapper = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: 22% 3% 75%;
+`;
+
+export const Number = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+export const Title = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+export const Price = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export const Date = styled.div`
+  width: 100%;
+  height: 100%;
 `;
 
 export const ProfileWrapper = styled.div`
@@ -142,12 +159,14 @@ export const MainBoderListDiv = styled.div`
 `;
 export const MainBoardList = styled.div`
   width: 100%;
-  height: 100%;
+  height: 80px;
   display: grid;
   grid-template-columns: 20% 30% 15% 15% 20%;
   border-top: 1px #000000;
   justify-content: center;
   margin-left: 20px;
+  color: #ababab;
+  border-bottom: dotted 1px #ababab;
 `;
 
 export const MainBoardListDivs = styled.div`
